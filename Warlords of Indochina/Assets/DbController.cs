@@ -24,29 +24,34 @@ public class DbController : MonoBehaviour
         }
         conn = "URI=file:" + Application.dataPath + "/Database.db";
         dbconn = (IDbConnection)new SqliteConnection(conn);
-        dbconn.Open();
         dbcmd = dbconn.CreateCommand();
-
+        GetProvinceInfo();
     }
 
-    ProvinceData GetProvinceInfo(string name)
+    void GetProvinceInfo()
     {
-        sqlQuery = "SELECT p.Name, p.BuildingSlots, p.AvailableBuildingSlots, n.Color, t.Terrain, t.Attrition, t.DeffenderBonus" 
-            + "FROM Provinces p WHERE p.Name = " + name
-            + "INNER JOIN Nations n ON p.NationId = n.NationId"
-            + "INNER JOIN Terrain t ON p.TerrainId = t.TerrainId";
+        dbconn.Open();
+        sqlQuery = "SELECT p.Name, p.BuildingSlots, p.AvailableBuildingSlots, n.Color, t.Name, t.Attrition, t.DeffenderBonus " 
+            + "FROM Provinces p "
+            + "INNER JOIN Nations n ON p.NationId = n.NationId "
+            + "INNER JOIN Terrains t ON p.TerrainId = t.TerrainId ";
         dbcmd.CommandText = sqlQuery;
-        reader = dbcmd.ExecuteReader;
+        reader = dbcmd.ExecuteReader();
 
         while (reader.Read())
         {
-
+            ProvinceManagement.Instance.AddProvince(new ProvinceData(
+                reader.GetString(0),
+                reader.GetInt32(1),
+                reader.GetInt32(2),
+                reader.GetString(3),
+                reader.GetString(4),
+                reader.GetInt32(5),
+                reader.GetInt32(6)));
         }
         reader.Close();
         reader = null;
         dbcmd.Dispose();
-        dbcmd = null;
         dbconn.Close();
-        dbconn = null;
     }
 }
