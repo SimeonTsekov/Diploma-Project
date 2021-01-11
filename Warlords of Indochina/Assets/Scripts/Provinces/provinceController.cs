@@ -6,7 +6,7 @@ using System;
 
 [RequireComponent(typeof(PolygonCollider2D))]
 
-public class provinceController : MonoBehaviour
+public class ProvinceController : MonoBehaviour
 {
     SpriteRenderer sprite;
     public string gameObjectName;
@@ -20,16 +20,19 @@ public class provinceController : MonoBehaviour
         {
             provinceData = ProvinceManagement.Instance.provinces.Find(x => Equals(x.name, gameObjectName));
             ColorUtility.TryParseHtmlString(provinceData.color, out color);
-            Debug.Log(provinceData.name);
+            Debug.Log(provinceData.name + provinceData.color);
         }
-        catch (Exception e) { }
+        catch (Exception e) 
+        {
+            //Debug.Log(e);
+        }
         sprite = GetComponent<SpriteRenderer>();
         sprite.color = new Color(color.r, color.g, color.b, 0.5f);
     }
 
     void OnMouseEnter()
     {
-        sprite.color = new Color(color.r, color.g, color.b, 1f);
+        sprite.color = new Color(color.r, color.g, color.b, 0.75f);
     }
 
     void OnMouseExit()
