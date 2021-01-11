@@ -199,6 +199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &70530703
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -327,6 +328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &140216841
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -457,6 +459,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &207093882
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -676,6 +679,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &353950880
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -900,6 +904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &368291170
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1006,6 +1011,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &457155693
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1135,6 +1141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &511308161
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1286,6 +1293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &514189320
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1445,8 +1453,8 @@ Camera:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1539,6 +1547,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &522741583
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1667,6 +1676,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &571589838
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1896,6 +1906,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &692231710
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2063,6 +2074,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &783285325
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2218,6 +2230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &786894758
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2347,6 +2360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &800319476
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2475,6 +2489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &814248134
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2687,6 +2702,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &831299998
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2833,6 +2849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &952693338
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3047,6 +3064,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &1049168248
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3124,6 +3142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &1087635769
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3370,6 +3389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &1109156732
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3497,6 +3517,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &1140271621
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3624,6 +3645,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &1149814878
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3755,6 +3777,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &1164403843
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3883,6 +3906,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &1172667430
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4013,6 +4037,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &1218818074
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4144,6 +4169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &1223147685
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4307,6 +4333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &1266043281
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4437,6 +4464,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &1274009239
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4564,6 +4592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &1318236124
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4742,6 +4771,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &1430088477
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4823,6 +4853,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &1437286982
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5019,6 +5050,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &1468406376
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5150,6 +5182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &1474373555
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5277,6 +5310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &1500473083
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5406,6 +5440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &1504507410
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5534,6 +5569,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &1519027116
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5664,6 +5700,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &1542384394
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5825,6 +5862,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &1579250795
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5953,6 +5991,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &1599315829
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -6081,6 +6120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &1625506082
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -6211,6 +6251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &1663492877
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -6364,6 +6405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &1693467075
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -6491,6 +6533,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &1742017682
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -6620,6 +6663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &1746106492
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -6750,6 +6794,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &1794989239
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -6876,6 +6921,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &1809025041
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -7092,6 +7138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &1824285722
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -7257,6 +7304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &1844490611
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -7449,6 +7497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &1845167669
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -7622,6 +7671,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &1889388643
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -7830,6 +7880,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &1937445062
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -7959,6 +8010,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &1952316144
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -8134,6 +8186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &2024153930
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -8261,6 +8314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &2035431505
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -8391,6 +8445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &2059602772
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -8518,6 +8573,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectName: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &2100572465
 PolygonCollider2D:
   m_ObjectHideFlags: 0

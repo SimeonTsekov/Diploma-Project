@@ -9,13 +9,19 @@ public class ProvinceManagement : MonoBehaviour
     public static ProvinceManagement Instance { get; private set; }
     public List<ProvinceData> provinces { get; private set; }
 
-    void Start()
+    void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         provinces = new List<ProvinceData>();
+    }
+
+    void Start()
+    {
+ 
     }
 
     public void AddProvince(ProvinceData province)

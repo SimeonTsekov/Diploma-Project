@@ -15,13 +15,17 @@ public class DbController : MonoBehaviour
     IDataReader reader;
     string sqlQuery;
 
-    void Start()
+    void Awake()
     {
-        if(Instance == null)
+        if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
+    }
+
+    void Start()
+    {
         conn = "URI=file:" + Application.dataPath + "/Database.db";
         dbconn = (IDbConnection)new SqliteConnection(conn);
         dbcmd = dbconn.CreateCommand();
