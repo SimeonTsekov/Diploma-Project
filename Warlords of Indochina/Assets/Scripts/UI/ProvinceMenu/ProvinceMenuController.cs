@@ -1,23 +1,41 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System;
 using GlobalDatas;
+using UnityEngine;
+using static UnityEngine.Vector3;
 
-public class ProvinceMenuController : MonoBehaviour
+namespace UI.ProvinceMenu
 {
-    public static ProvinceMenuController Instance { get; private set; }
-    public ProvinceData provinceData;
-
-    void Awake()
+    public class ProvinceMenuController : MonoBehaviour
     {
-        if (Instance == null)
+        public static ProvinceMenuController Instance { get; private set; }
+        public ProvinceData ProvinceData;
+        public RectTransform menuTransform;
+        private bool _isHidden;
+
+        private void Awake()
         {
-            Instance = this;
+            if (Instance == null)
+            {
+                Instance = this;
+            }
         }
-    }
 
-    public void UpdateProvinceData(ProvinceData provinceData)
-    {
-        this.provinceData = provinceData;
+        private void Start()
+        {
+            _isHidden = true;
+        }
+
+        public void UpdateProvinceData(ProvinceData provinceData)
+        {
+            this.ProvinceData = provinceData;
+        }
+        
+        public void Show()
+        {
+            if (!_isHidden) return;
+            _isHidden = false;
+            menuTransform.anchorMax = Vector2.zero;
+            menuTransform.anchorMin = Vector2.zero;
+        }
     }
 }

@@ -1,28 +1,29 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
-using System;
 
-public class ProvinceOwnerLabelController : MonoBehaviour
+namespace UI.ProvinceMenu
 {
-    Text txt;
-
-    void Start()
+    public class ProvinceOwnerLabelController : MonoBehaviour
     {
-        txt = GetComponent<Text>();
-        txt.text = "Owner: ";
-    }
+        Text _txt;
 
-    void Update()
-    {
-        try
+        void Start()
         {
-            txt.text = "Owner: " + ProvinceMenuController.Instance.provinceData.owner;
+            _txt = GetComponent<Text>();
+            _txt.text = "Owner: ";
         }
-        catch (Exception e)
+
+        void Update()
         {
-            Debug.Log(e);
+            try
+            {
+                _txt.text = "Owner: " + ProvinceMenuController.Instance.ProvinceData.Owner;
+            }
+            catch (Exception e)
+            {
+                Debug.Log(e);
+            }
         }
     }
 }

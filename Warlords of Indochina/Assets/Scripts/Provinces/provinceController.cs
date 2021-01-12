@@ -1,46 +1,49 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System;
 using GlobalDatas;
-using System;
+using UI.ProvinceMenu;
+using UnityEngine;
 
-[RequireComponent(typeof(PolygonCollider2D))]
-
-public class ProvinceController : MonoBehaviour
+namespace Provinces
 {
-    SpriteRenderer sprite;
-    public string gameObjectName;
-    public ProvinceData provinceData;
-    public Color color = new Color();
+    [RequireComponent(typeof(PolygonCollider2D))]
 
-    void Start()
+    public class ProvinceController : MonoBehaviour
     {
-        gameObjectName = gameObject.name;
-        try
+        private SpriteRenderer _sprite;
+        private string _gameObjectName;
+        private Color _color;
+        private ProvinceData ProvinceData { get; set; }
+
+        void Start()
         {
-            provinceData = ProvinceManagement.Instance.provinces.Find(x => Equals(x.name, gameObjectName));
-            ColorUtility.TryParseHtmlString(provinceData.color, out color);
+            _gameObjectName = gameObject.name;
+            try
+            {
+                ProvinceData = ProvinceManagement.Instance.Provinces.Find(x => Equals(x.Name, _gameObjectName));
+                ColorUtility.TryParseHtmlString(ProvinceData.Color, out _color);
+            }
+            catch (Exception e) 
+            {
+                Debug.Log(e);
+            }
+            _sprite = GetComponent<SpriteRenderer>();
+            _sprite.color = new Color(_color.r, _color.g, _color.b, 0.5f);
         }
-        catch (Exception e) 
+
+        private void OnMouseEnter()
         {
-            Debug.Log(e);
+            _sprite.color = new Color(_color.r, _color.g, _color.b, 0.75f);
         }
-        sprite = GetComponent<SpriteRenderer>();
-        sprite.color = new Color(color.r, color.g, color.b, 0.5f);
-    }
 
-    void OnMouseEnter()
-    {
-        sprite.color = new Color(color.r, color.g, color.b, 0.75f);
-    }
+        private void OnMouseExit()
+        {
+            _sprite.color = new Color(_color.r, _color.g, _color.b, 0.5f);
+        }
 
-    void OnMouseExit()
-    {
-        sprite.color = new Color(color.r, color.g, color.b, 0.5f);
-    }
-
-    void OnMouseDown()
-    {
-        ProvinceMenuController.Instance.UpdateProvinceData(this.provinceData);
+        private void OnMouseDown()
+        {
+            ProvinceMenuController.Instance.UpdateProvinceData(this.ProvinceData);
+            ProvinceMenuController.Instance.Show();
+        }
     }
 }

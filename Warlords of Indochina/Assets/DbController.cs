@@ -5,17 +5,18 @@ using Mono.Data.Sqlite;
 using System.Data;
 using System;
 using GlobalDatas;
+using Provinces;
 
 public class DbController : MonoBehaviour
 {
     public static DbController Instance { get; private set; }
-    string conn;
-    IDbConnection dbconn;
-    IDbCommand dbcmd;
-    IDataReader reader;
-    string sqlQuery;
+    private string _conn;
+    private IDbConnection _dbconn;
+    private IDbCommand _dbcmd;
+    private IDataReader _reader;
+    private string _sqlQuery;
 
-    void Awake()
+    private void Awake()
     {
         if (Instance == null)
         {
@@ -24,40 +25,40 @@ public class DbController : MonoBehaviour
         }
     }
 
-    void Start()
+    private void Start()
     {
-        conn = "URI=file:" + Application.dataPath + "/Database.db";
-        dbconn = (IDbConnection)new SqliteConnection(conn);
-        dbcmd = dbconn.CreateCommand();
+        _conn = "URI=file:" + Application.dataPath + "/Database.db";
+        _dbconn = (IDbConnection)new SqliteConnection(_conn);
+        _dbcmd = _dbconn.CreateCommand();
         GetProvinceInfo();
     }
 
-    void GetProvinceInfo()
+    private void GetProvinceInfo()
     {
-        dbconn.Open();
-        sqlQuery = "SELECT p.Name, p.BuildingSlots, p.AvailableBuildingSlots, n.Color, n.NationId, n.Name, t.Name, t.Attrition, t.DeffenderBonus " 
+        _dbconn.Open();
+        _sqlQuery = "SELECT p.Name, p.BuildingSlots, p.AvailableBuildingSlots, n.Color, n.NationId, n.Name, t.Name, t.Attrition, t.DeffenderBonus " 
             + "FROM Provinces p "
             + "INNER JOIN Nations n ON p.NationId = n.NationId "
             + "INNER JOIN Terrains t ON p.TerrainId = t.TerrainId ";
-        dbcmd.CommandText = sqlQuery;
-        reader = dbcmd.ExecuteReader();
+        _dbcmd.CommandText = _sqlQuery;
+        _reader = _dbcmd.ExecuteReader();
 
-        while (reader.Read())
+        while (_reader.Read())
         {
             ProvinceManagement.Instance.AddProvince(new ProvinceData(
-                reader.GetString(0),
-                reader.GetInt32(1),
-                reader.GetInt32(2),
-                reader.GetString(3),
-                reader.GetString(4),
-                reader.GetString(5),
-                reader.GetString(6),
-                reader.GetInt32(7),
-                reader.GetInt32(8)));
+                _reader.GetString(0),
+                _reader.GetInt32(1),
+                _reader.GetInt32(2),
+                _reader.GetString(3),
+                _reader.GetString(4),
+                _reader.GetString(5),
+                _reader.GetString(6),
+                _reader.GetInt32(7),
+                _reader.GetInt32(8)));
         }
-        reader.Close();
-        reader = null;
-        dbcmd.Dispose();
-        dbconn.Close();
+        _reader.Close();
+        _reader = null;
+        _dbcmd.Dispose();
+        _dbconn.Close();
     }
 }

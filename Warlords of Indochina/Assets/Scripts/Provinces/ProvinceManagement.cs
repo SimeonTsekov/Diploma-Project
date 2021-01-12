@@ -1,31 +1,27 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System.Collections.Generic;
 using GlobalDatas;
-using System.Collections.ObjectModel;
+using UnityEngine;
 
-public class ProvinceManagement : MonoBehaviour
+namespace Provinces
 {
-    public static ProvinceManagement Instance { get; private set; }
-    public List<ProvinceData> provinces { get; private set; }
-
-    void Awake()
+    public class ProvinceManagement : MonoBehaviour
     {
-        if (Instance == null)
+        public static ProvinceManagement Instance { get; private set; }
+        public List<ProvinceData> Provinces { get; private set; }
+
+        private void Awake()
         {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
+            if (Instance == null)
+            {
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            Provinces = new List<ProvinceData>();
         }
-        provinces = new List<ProvinceData>();
-    }
 
-    void Start()
-    {
- 
-    }
-
-    public void AddProvince(ProvinceData province)
-    {
-        provinces.Add(province);
+        public void AddProvince(ProvinceData province)
+        {
+            Provinces.Add(province);
+        }
     }
 }
