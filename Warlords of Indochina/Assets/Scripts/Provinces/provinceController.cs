@@ -20,11 +20,10 @@ public class ProvinceController : MonoBehaviour
         {
             provinceData = ProvinceManagement.Instance.provinces.Find(x => Equals(x.name, gameObjectName));
             ColorUtility.TryParseHtmlString(provinceData.color, out color);
-            Debug.Log(provinceData.name + provinceData.color);
         }
         catch (Exception e) 
         {
-            //Debug.Log(e);
+            Debug.Log(e);
         }
         sprite = GetComponent<SpriteRenderer>();
         sprite.color = new Color(color.r, color.g, color.b, 0.5f);
@@ -38,5 +37,10 @@ public class ProvinceController : MonoBehaviour
     void OnMouseExit()
     {
         sprite.color = new Color(color.r, color.g, color.b, 0.5f);
+    }
+
+    void OnMouseDown()
+    {
+        ProvinceMenuController.Instance.UpdateProvinceData(this.provinceData);
     }
 }
