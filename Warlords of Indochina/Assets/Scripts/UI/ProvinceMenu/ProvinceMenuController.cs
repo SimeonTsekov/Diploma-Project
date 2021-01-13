@@ -1,7 +1,5 @@
-﻿using System;
-using GlobalDatas;
+﻿using GlobalDatas;
 using UnityEngine;
-using static UnityEngine.Vector3;
 
 namespace UI.ProvinceMenu
 {

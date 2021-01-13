@@ -1,11 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class UIController : MonoBehaviour
+namespace UI
 {
-    private void Awake()
+    public class UIController : MonoBehaviour
     {
-        DontDestroyOnLoad(gameObject);
+        private void Awake()
+        {
+            DontDestroyOnLoad(gameObject);
+        }
     }
 }

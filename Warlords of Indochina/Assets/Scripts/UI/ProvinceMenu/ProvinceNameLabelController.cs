@@ -6,15 +6,15 @@ namespace UI.ProvinceMenu
 {
     public class ProvinceNameLabelController : MonoBehaviour
     {
-        Text _txt;
+        private Text _txt;
 
-        void Start()
+        private void Start()
         {
             _txt = GetComponent<Text>();
             _txt.text = "";
         }
 
-        void Update()
+        private void Update()
         {
             try
             {

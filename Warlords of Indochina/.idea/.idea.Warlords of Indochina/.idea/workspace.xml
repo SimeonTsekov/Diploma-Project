@@ -20,17 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e07e5c7b-9222-4973-a516-0b6c39e0665b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GlobalDatas.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Provinces/IprovinceFetchedListener.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Provinces/IprovinceFetchedListener.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Warlords of Indochina/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Warlords of Indochina/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Warlords of Indochina/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Warlords of Indochina/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/DbController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DbController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Provinces/ProvinceData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GlobalDatas/ProvinceData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Provinces/ProvinceData.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GlobalDatas/ProvinceData.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Provinces/ProvinceManagement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Provinces/ProvinceManagement.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Provinces/provinceController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Provinces/provinceController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ProvinceMenu/ProvinceMenuController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ProvinceMenu/ProvinceMenuController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ProvinceMenu/ProvinceNameLabelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ProvinceMenu/ProvinceNameLabelController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ProvinceMenu/ProvinceOwnerLabelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ProvinceMenu/ProvinceOwnerLabelController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ProvinceMenu/ProvinceTerrainLabelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ProvinceMenu/ProvinceTerrainLabelController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,18 +41,23 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/63DD8BF9-8CFA-4BA9-85AF-735EF1A56BA9/de/544df211/List`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/63DD8BF9-8CFA-4BA9-85AF-735EF1A56BA9/c5/ef7b8e4d/Task.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/GlobalDatas/ProvinceData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Provinces/ProvinceManagement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/ProvinceMenu/ProvinceTerrainLabelController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/ProvinceMenu/ProvinceNameLabelController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/ProvinceMenu/ProvinceOwnerLabelController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIController.cs" />
-        <option value="$PROJECT_DIR$/Assets/DbController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Provinces/ProvinceController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/ProvinceMenu/ProvinceTerrainLabelController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/ProvinceMenu/ProvinceMenuController.cs" />
+        <option value="$PROJECT_DIR$/Assets/DbController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Provinces/ProvinceManagement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Provinces/IprovinceFetchedListener.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Provinces/ProvinceController.cs" />
       </list>
     </option>
   </component>
@@ -66,7 +71,7 @@
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -99,6 +104,7 @@
       <updated>1610473656913</updated>
       <workItem from="1610473750428" duration="185000" />
       <workItem from="1610474125443" duration="6104000" />
+      <workItem from="1610520911808" duration="9643000" />
     </task>
     <servers />
   </component>
@@ -117,14 +123,15 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="153" y="147" width="1542" height="711" key="SettingsEditor" timestamp="1610474323829">
+    <state x="153" y="147" width="1542" height="711" key="SettingsEditor" timestamp="1610521038167">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="153" y="147" width="1542" height="711" key="SettingsEditor/0.0.1920.1080/-1920.0.1536.864@0.0.1920.1080" timestamp="1610474323829" />
+    <state x="153" y="147" width="1542" height="711" key="SettingsEditor/0.0.1920.1080/-1920.0.1536.864@0.0.1920.1080" timestamp="1610521038167" />
   </component>
 </project>

@@ -12,6 +12,7 @@
             <e p="ProvinceData.cs" t="Include" />
           </e>
           <e p="Provinces" t="Include">
+            <e p="IprovinceFetchedListener.cs" t="Include" />
             <e p="ProvinceController.cs" t="Include" />
             <e p="ProvinceManagement.cs" t="Include" />
           </e>

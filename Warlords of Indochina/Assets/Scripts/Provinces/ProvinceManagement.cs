@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using GlobalDatas;
 using UnityEngine;
 
@@ -8,20 +9,29 @@ namespace Provinces
     {
         public static ProvinceManagement Instance { get; private set; }
         public List<ProvinceData> Provinces { get; private set; }
-
-        private void Awake()
+        public List<IProvinceFetchedListener> ProvinceFetchedListeners;
+        
+        private async void Awake()
         {
+            Debug.Log("Awake");
             if (Instance == null)
             {
                 Instance = this;
                 DontDestroyOnLoad(gameObject);
             }
-            Provinces = new List<ProvinceData>();
+
+            ProvinceFetchedListeners = new List<IProvinceFetchedListener>();
+            Provinces = await GetProvinces();
+            foreach (var x in ProvinceFetchedListeners)
+            {
+                x.OnProvincesFetched(Provinces);
+            }
+            Debug.Log("Ending Awake");
         }
 
-        public void AddProvince(ProvinceData province)
+        private async Task<List<ProvinceData>> GetProvinces()
         {
-            Provinces.Add(province);
+            return await DbController.Instance.GetProvinceInfo();
         }
     }
 }
