@@ -20,8 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e07e5c7b-9222-4973-a516-0b6c39e0665b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/DbController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DbController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Provinces/ProvinceManagement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Provinces/ProvinceManagement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Warlords of Indochina/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Warlords of Indochina/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Warlords of Indochina/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Warlords of Indochina/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Warlords of Indochina/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Warlords of Indochina/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +49,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Provinces/ProvinceController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Provinces/ProvinceManagement.cs" />
         <option value="$PROJECT_DIR$/Assets/DbController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Time/TimeLabelController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Time/TimeController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/TimeControll/TimeController.cs" />
       </list>
     </option>
   </component>
@@ -95,6 +99,7 @@
       <workItem from="1610473750428" duration="185000" />
       <workItem from="1610474125443" duration="6104000" />
       <workItem from="1610520911808" duration="10397000" />
+      <workItem from="1610557473869" duration="3158000" />
     </task>
     <servers />
   </component>

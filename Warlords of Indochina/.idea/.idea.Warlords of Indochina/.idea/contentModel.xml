@@ -16,12 +16,18 @@
             <e p="ProvinceController.cs" t="Include" />
             <e p="ProvinceManagement.cs" t="Include" />
           </e>
+          <e p="TimeControll" t="Include">
+            <e p="TimeController.cs" t="Include" />
+          </e>
           <e p="UI" t="Include">
             <e p="ProvinceMenu" t="Include">
               <e p="ProvinceMenuController.cs" t="Include" />
               <e p="ProvinceNameLabelController.cs" t="Include" />
               <e p="ProvinceOwnerLabelController.cs" t="Include" />
               <e p="ProvinceTerrainLabelController.cs" t="Include" />
+            </e>
+            <e p="Time" t="Include">
+              <e p="TimeLabelController.cs" t="Include" />
             </e>
             <e p="UIController.cs" t="Include" />
           </e>
