@@ -44,16 +44,9 @@ namespace Provinces
 
         public void OnProvincesFetched(List<ProvinceData> provinceDatas)
         {
-            Debug.Log(provinceDatas.Count);
-            try
-            {
-                ProvinceData = provinceDatas.Find(x => Equals(x.Name, _gameObjectName));
-                Debug.Log("Province set");
-                ColorUtility.TryParseHtmlString(ProvinceData.Color, out _color);
-            }
-            catch (Exception e) 
-            {
-            }
+            ProvinceData = provinceDatas.Find(x => Equals(x.Name, _gameObjectName));
+            ColorUtility.TryParseHtmlString(ProvinceData.Color, out _color);
+            
             _sprite.color = new Color(_color.r, _color.g, _color.b, 0.5f);
         }
     }

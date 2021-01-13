@@ -8,12 +8,10 @@ namespace Provinces
     public class ProvinceManagement : MonoBehaviour
     {
         public static ProvinceManagement Instance { get; private set; }
-        public List<ProvinceData> Provinces { get; private set; }
         public List<IProvinceFetchedListener> ProvinceFetchedListeners;
         
         private async void Awake()
         {
-            Debug.Log("Awake");
             if (Instance == null)
             {
                 Instance = this;
@@ -21,12 +19,11 @@ namespace Provinces
             }
 
             ProvinceFetchedListeners = new List<IProvinceFetchedListener>();
-            Provinces = await GetProvinces();
+            var provinces = await GetProvinces();
             foreach (var x in ProvinceFetchedListeners)
             {
-                x.OnProvincesFetched(Provinces);
+                x.OnProvincesFetched(provinces);
             }
-            Debug.Log("Ending Awake");
         }
 
         private async Task<List<ProvinceData>> GetProvinces()

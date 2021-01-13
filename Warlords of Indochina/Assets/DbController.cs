@@ -30,10 +30,6 @@ public class DbController : MonoBehaviour
         _dbcmd = _dbconn.CreateCommand();
     }
 
-    private void Start()
-    {
-    }
-
     public async Task<List<ProvinceData>> GetProvinceInfo()
     {
         var provinces = new List<ProvinceData>();
@@ -65,7 +61,6 @@ public class DbController : MonoBehaviour
             _dbcmd.Dispose();
             _dbconn.Close(); 
         });
-        Debug.Log("Provinces fetched from db");
         return provinces;
     }
 }
