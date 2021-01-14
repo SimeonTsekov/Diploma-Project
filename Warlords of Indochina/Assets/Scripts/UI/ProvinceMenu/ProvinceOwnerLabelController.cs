@@ -1,6 +1,9 @@
 ﻿using System;
+using Player;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Utils;
 
 namespace UI.ProvinceMenu
 {
@@ -11,14 +14,21 @@ namespace UI.ProvinceMenu
         private void Start()
         {
             _txt = GetComponent<Text>();
-            _txt.text = "Owner: ";
+            _txt.text = "";
         }
 
         private void Update()
         {
+            Debug.Log(SceneManager.GetActiveScene().name);
             try
             {
-                _txt.text = "Owner: " + ProvinceMenuController.Instance.ProvinceData.Owner;
+                if (SceneManager.GetActiveScene().name.Equals("NationSelectionScene"))
+                {
+                    _txt.text = "Nation: " + NatioIdParser.ParseId(PlayerController.Instance.NationId);
+                } else if (SceneManager.GetActiveScene().name.Equals("MainGameScene"))
+                {
+                    _txt.text = "Owner: " + NatioIdParser.ParseId(ProvinceMenuController.Instance.ProvinceData.Owner);
+                }
             }
             catch (Exception e)
             {

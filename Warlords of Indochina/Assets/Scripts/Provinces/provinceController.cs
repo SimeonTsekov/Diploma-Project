@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using GlobalDatas;
+using Player;
 using UI.ProvinceMenu;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Provinces
 {
@@ -38,7 +40,17 @@ namespace Provinces
 
         private void OnMouseDown()
         {
-            ProvinceMenuController.Instance.UpdateProvinceData(this.ProvinceData);
+            var currentScene = SceneManager.GetActiveScene().name;
+            
+            if (Equals(currentScene, "MainGameScene"))
+            {
+                ProvinceMenuController.Instance.UpdateProvinceData(this.ProvinceData);
+                ProvinceMenuController.Instance.Show();
+            } else if (Equals(currentScene, "NationSelectionScene"))
+            {
+                PlayerController.Instance.SetNationId(ProvinceData.NationId);
+            }
+            
             ProvinceMenuController.Instance.Show();
         }
 

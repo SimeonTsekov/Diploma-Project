@@ -28,13 +28,13 @@ public class DbController : MonoBehaviour
         _conn = "URI=file:" + Application.dataPath + "/Database.db";
         _dbconn = (IDbConnection)new SqliteConnection(_conn);
         _dbcmd = _dbconn.CreateCommand();
+        _dbconn.Open();
     }
 
     public async Task<List<ProvinceData>> GetProvinceInfo()
     {
         var provinces = new List<ProvinceData>();
         await Task.Run(() => {
-            _dbconn.Open();
             _sqlQuery = "SELECT p.Name, p.BuildingSlots, p.AvailableBuildingSlots, n.Color, n.NationId, n.Name, t.Name, t.Attrition, t.DeffenderBonus " 
                         + "FROM Provinces p "
                         + "INNER JOIN Nations n ON p.NationId = n.NationId "
@@ -58,9 +58,15 @@ public class DbController : MonoBehaviour
 
             _reader.Close();
             _reader = null;
-            _dbcmd.Dispose();
-            _dbconn.Close(); 
         });
         return provinces;
+    }
+
+    private void OnDestroy()
+    {
+        _dbcmd.Dispose();
+        _dbcmd = null;
+        _dbconn.Close();
+        _dbconn = null;
     }
 }

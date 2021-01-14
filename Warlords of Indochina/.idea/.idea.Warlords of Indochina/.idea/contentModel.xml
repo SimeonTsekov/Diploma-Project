@@ -8,8 +8,12 @@
       <e p="Assets" t="Include">
         <e p="DbController.cs" t="Include" />
         <e p="Scripts" t="Include">
+          <e p="GameStateController.cs" t="Include" />
           <e p="GlobalDatas" t="Include">
             <e p="ProvinceData.cs" t="Include" />
+          </e>
+          <e p="Player" t="Include">
+            <e p="PlayerController.cs" t="Include" />
           </e>
           <e p="Provinces" t="Include">
             <e p="IprovinceFetchedListener.cs" t="Include" />
@@ -26,6 +30,7 @@
               <e p="ProvinceOwnerLabelController.cs" t="Include" />
               <e p="ProvinceTerrainLabelController.cs" t="Include" />
             </e>
+            <e p="StartButtonController.cs" t="Include" />
             <e p="Time" t="Include">
               <e p="PauseButtonController.cs" t="Include" />
               <e p="TimeLabelController.cs" t="Include" />
@@ -35,6 +40,7 @@
           </e>
           <e p="Utils" t="Include">
             <e p="Constants.cs" t="Include" />
+            <e p="NatioIdParser.cs" t="Include" />
           </e>
         </e>
       </e>
