@@ -1,4 +1,4 @@
-﻿using TimeControll;
+﻿using TimeControl;
 using UnityEngine;
 using UnityEngine.UI;
 

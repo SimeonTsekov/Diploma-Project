@@ -1,16 +1,18 @@
 ﻿using System;
 using System.Globalization;
 using UnityEngine;
+using UnityEngine.Serialization;
+using Utils;
 
-namespace TimeControll
+namespace TimeControl
 {
     public class TimeController : MonoBehaviour
     {
         public static TimeController Instance { get; private set; }
         private DateTime _date;
         private float _timer;
-        private int _delayAmount;
-        private int _speed;
+        private float _delayAmount;
+        public int speed;
         private void Awake()
         {
             if (Instance == null)
@@ -20,8 +22,8 @@ namespace TimeControll
             }
             _date = new DateTime(1444, 11, 11);
             _timer = 0f;
-            _delayAmount = 1;
-            _speed = 1;
+            _delayAmount = 1.0f;
+            speed = Constants.MinSpeed;
         }
 
         private void Update()
@@ -42,13 +44,24 @@ namespace TimeControll
 
         public void OnPause()
         {
-            if (Time.timeScale == 0.0f)
+            Time.timeScale = Math.Abs(Time.timeScale - Constants.Pause) < 0.1f ? Constants.Unpause : Constants.Pause;
+        }
+        
+        public void OnSpeedDown()
+        {
+            if (speed != Constants.MinSpeed)
             {
-                Time.timeScale = 1.1f;
+                speed--;
+                _delayAmount += Constants.TimeStep;
             }
-            else
+        }
+
+        public void OnSpeedUp()
+        {
+            if (speed != Constants.MaxSpeed)
             {
-                Time.timeScale = 0.0f;
+                speed++;
+                _delayAmount -= Constants.TimeStep;
             }
         }
     }
