@@ -24,13 +24,21 @@
             <e p="TimeController.cs" t="Include" />
           </e>
           <e p="UI" t="Include">
+            <e p="NationPicker" t="Include">
+              <e p="NationSelectorController.cs" t="Include" />
+              <e p="StartButtonController.cs" t="Include" />
+            </e>
+            <e p="PlayerInfo" t="Include">
+              <e p="GoldLabelController.cs" t="Include" />
+              <e p="ManpowerLabelController.cs" t="Include" />
+              <e p="NationLabelController.cs" t="Include" />
+            </e>
             <e p="ProvinceMenu" t="Include">
               <e p="ProvinceMenuController.cs" t="Include" />
               <e p="ProvinceNameLabelController.cs" t="Include" />
               <e p="ProvinceOwnerLabelController.cs" t="Include" />
               <e p="ProvinceTerrainLabelController.cs" t="Include" />
             </e>
-            <e p="StartButtonController.cs" t="Include" />
             <e p="Time" t="Include">
               <e p="PauseButtonController.cs" t="Include" />
               <e p="TimeLabelController.cs" t="Include" />

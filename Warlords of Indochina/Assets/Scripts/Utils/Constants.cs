@@ -7,5 +7,6 @@
 		public static readonly float Unpause = 1.0f;
 		public static readonly int MinSpeed = 1;
 		public static readonly int MaxSpeed = 5;
+		public static readonly int StartingProvinceManpower = 1000;
 	}
 }

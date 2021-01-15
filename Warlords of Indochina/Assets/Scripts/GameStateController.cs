@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Linq;
+using Player;
 using Provinces;
 using UnityEngine;
+
 
 public class GameStateController : MonoBehaviour
 {
@@ -15,6 +15,10 @@ public class GameStateController : MonoBehaviour
             Instance = this;
         }
         await ProvinceManagement.Instance.LoadProvinces();
+        PlayerController.Instance.SetProvinces(
+            GameObject.FindGameObjectsWithTag("Province")
+                .Where(p=> p.GetComponent<ProvinceController>().ProvinceData.NationId.Equals(PlayerController.Instance.NationId))
+                .ToList());
     }
 
 }

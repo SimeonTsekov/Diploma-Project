@@ -15,12 +15,13 @@ namespace Provinces
         private SpriteRenderer _sprite;
         private string _gameObjectName;
         private Color _color;
-        private ProvinceData ProvinceData { get; set; }
+        public ProvinceData ProvinceData { get; set; }
 
         private void Awake()
         {
             _gameObjectName = gameObject.name;
             _sprite = GetComponent<SpriteRenderer>();
+            gameObject.tag = "Province";
         }
 
         private void Start()

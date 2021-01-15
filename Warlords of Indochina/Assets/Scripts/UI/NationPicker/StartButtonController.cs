@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace UI
+namespace UI.NationPicker
 {
 	public class StartButtonController : MonoBehaviour
 	{

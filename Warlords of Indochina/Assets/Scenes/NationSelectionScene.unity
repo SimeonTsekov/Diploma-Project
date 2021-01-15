@@ -168,7 +168,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 30293215}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b632d19e1dae1034f8ca7079a55dade0, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d654f341b584444a0f36b854e0968db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &30293218
@@ -1589,7 +1589,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3.3819604
+  orthographic size: 3.4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -5237,6 +5237,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7624da760c5fdeb4caf4cbd668242a0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Provinces: []
+  gold: 0
+  manpower: 0
 --- !u!4 &1409331002
 Transform:
   m_ObjectHideFlags: 0
