@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using GlobalDatas;
 using Provinces;
 using UnityEngine;
@@ -10,14 +11,16 @@ namespace Economy
 	public class ResourceManagemnt : MonoBehaviour
 	{
 		public List<ProvinceData> Provinces;
-		public float gold;
-		public int manpower;
+		public float Gold { get; private set; }
+		public int Manpower { get; private set; }
+		public int MaximumManpower { get; private set; }
 
 		private void Awake()
 		{
 			Provinces = new List<ProvinceData>();
-			gold = 0;
-			manpower = 0;
+			Gold = 0;
+			Manpower = 0;
+			MaximumManpower = 0;
 		}
 		
 		public void SetProvinces(List<GameObject> provinces)
@@ -26,14 +29,30 @@ namespace Economy
 			{
 				var tempProvince = province.GetComponent<ProvinceController>().ProvinceData;
 				this.Provinces.Add(tempProvince);
-				gold += tempProvince.Gold;
-				manpower += tempProvince.Manpower;
+				Gold += tempProvince.Gold;
+				MaximumManpower += tempProvince.Manpower;
 			}
 
-			gold *= Constants.MonthsInAnYear;
-			Debug.Log(gold);
-			manpower += Constants.ManpowerIncrease;
-			Debug.Log(manpower);
+			Gold *= Constants.MonthsInAnYear;
+			MaximumManpower += Constants.ManpowerIncrease;
+			Manpower = (int) Math.Round((double)(MaximumManpower * 3) / 4);
+		}
+
+		public void UpdateResources()
+		{
+			Gold += GetMonthlyGold();
+			Manpower += Manpower == MaximumManpower ? 0 : GetMonthlyManpowerRecovery();
+		}
+
+		public int GetMonthlyManpowerRecovery()
+		{
+			return (Constants.ManpowerIncrease + Provinces.Sum(province => province.Manpower)) /
+			       Constants.ManpowerRecoverySpeedDivider;
+		}
+
+		public float GetMonthlyGold()
+		{
+			return Provinces.Sum(province => province.Gold);
 		}
 	}
 }

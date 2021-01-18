@@ -10,5 +10,6 @@
 		public static readonly int StartingProvinceManpower = 1000;
 		public static readonly int ManpowerIncrease = 10000;
 		public static readonly int MonthsInAnYear = 12;
+		public static readonly int ManpowerRecoverySpeedDivider = 120;
 	}
 }

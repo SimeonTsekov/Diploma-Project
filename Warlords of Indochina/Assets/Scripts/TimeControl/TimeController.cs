@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using Player;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Utils;
@@ -34,6 +35,10 @@ namespace TimeControl
             {
                 _timer = 0f;
                 _date = _date.AddDays(1);
+                if (_date.Day == 1)
+                {
+                    PlayerController.Instance.ResourceManagement.UpdateResources();
+                }
             }
         }
 
