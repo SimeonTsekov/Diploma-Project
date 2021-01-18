@@ -35,7 +35,17 @@ public class DbController : MonoBehaviour
     {
         var provinces = new List<ProvinceData>();
         await Task.Run(() => {
-            _sqlQuery = "SELECT p.Name, p.BuildingSlots, p.AvailableBuildingSlots, n.Color, n.NationId, n.Name, t.Name, t.Attrition, t.DeffenderBonus " 
+            _sqlQuery = "SELECT p.Name, " +
+                        "p.BuildingSlots, " +
+                        "p.AvailableBuildingSlots, " +
+                        "n.Color, " +
+                        "n.NationId, " +
+                        "n.Name, " +
+                        "t.Name, " +
+                        "t.Attrition, " +
+                        "t.DefenderBonus, " +
+                        "(SELECT pr.Amount FROM ProvinceResources pr WHERE pr.ProvinceId = p.ProvinceId AND pr.ResourceId = 1), " +
+                        "(SELECT pr.Amount FROM ProvinceResources pr WHERE pr.ProvinceId = p.ProvinceId AND pr.ResourceId = 2) " 
                         + "FROM Provinces p "
                         + "INNER JOIN Nations n ON p.NationId = n.NationId "
                         + "INNER JOIN Terrains t ON p.TerrainId = t.TerrainId ";
@@ -53,7 +63,9 @@ public class DbController : MonoBehaviour
                     _reader.GetString(5),
                     _reader.GetString(6),
                     _reader.GetInt32(7),
-                    _reader.GetInt32(8)));
+                    _reader.GetInt32(8),
+                     _reader.GetFloat(9),
+                    (int)_reader.GetFloat(10)));
             }
 
             _reader.Close();

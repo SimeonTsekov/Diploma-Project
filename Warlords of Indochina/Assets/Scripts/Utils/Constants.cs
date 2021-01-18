@@ -8,5 +8,7 @@
 		public static readonly int MinSpeed = 1;
 		public static readonly int MaxSpeed = 5;
 		public static readonly int StartingProvinceManpower = 1000;
+		public static readonly int ManpowerIncrease = 10000;
+		public static readonly int MonthsInAnYear = 12;
 	}
 }

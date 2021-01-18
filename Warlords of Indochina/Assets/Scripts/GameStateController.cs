@@ -15,7 +15,7 @@ public class GameStateController : MonoBehaviour
             Instance = this;
         }
         await ProvinceManagement.Instance.LoadProvinces();
-        PlayerController.Instance.SetProvinces(
+        PlayerController.Instance.ResourceManagement.SetProvinces(
             GameObject.FindGameObjectsWithTag("Province")
                 .Where(p=> p.GetComponent<ProvinceController>().ProvinceData.NationId.Equals(PlayerController.Instance.NationId))
                 .ToList());

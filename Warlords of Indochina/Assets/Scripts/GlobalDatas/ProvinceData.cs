@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UI.PlayerInfo;
 using UnityEngine;
 
 namespace GlobalDatas
@@ -15,6 +16,8 @@ namespace GlobalDatas
         public string Terrain;
         public int Attrition;
         public int DeffenderBonus;
+        public float Gold;
+        public int Manpower;
 
         public ProvinceData(string name
             , int buildingSlots
@@ -24,7 +27,9 @@ namespace GlobalDatas
             , string owner
             , string terrain
             , int attrition
-            , int deffenderBonus)
+            , int deffenderBonus
+            , float gold
+            , int manpower)
         {
             this.Name = name;
             this.BuildingSlots = buildingSlots;
@@ -35,6 +40,8 @@ namespace GlobalDatas
             this.Terrain = terrain;
             this.Attrition = attrition;
             this.DeffenderBonus = deffenderBonus;
+            this.Gold = gold;
+            this.Manpower = manpower;
         }
     }
 }

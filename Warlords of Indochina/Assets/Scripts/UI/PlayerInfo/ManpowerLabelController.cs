@@ -16,7 +16,7 @@ namespace UI.PlayerInfo
 
         private void Update()
         {
-            _txt.text = "Mnp: " + PlayerController.Instance.manpower;
+            _txt.text = "Mnp: " + PlayerController.Instance.ResourceManagement.manpower;
         }
     }
 }

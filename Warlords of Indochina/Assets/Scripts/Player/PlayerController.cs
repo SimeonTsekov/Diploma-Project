@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Economy;
 using GlobalDatas;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -11,9 +12,7 @@ namespace Player
     {
         public static PlayerController Instance { get; private set; }
         public string NationId { get; private set; }
-        public List<GameObject> Provinces;
-        public int gold;
-        public int manpower;
+        public ResourceManagemnt ResourceManagement { get; private set; }
 
         private void Awake()
         {
@@ -22,21 +21,13 @@ namespace Player
                 Instance = this;
             }
             DontDestroyOnLoad(gameObject);
+            ResourceManagement = gameObject.AddComponent<ResourceManagemnt>();
             NationId = "";
-            gold = 100;
-            manpower = 0;
         }
 
         public void SetNationId(string nationId)
         {
             this.NationId = nationId;
-            Debug.Log(NationId);
-        }
-
-        public void SetProvinces(List<GameObject> provinceDatas)
-        {
-            this.Provinces = provinceDatas;
-            this.manpower = provinceDatas.Count * Constants.StartingProvinceManpower;
         }
     }
 }
