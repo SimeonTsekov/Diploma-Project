@@ -37,6 +37,8 @@
               <e p="NationLabelController.cs" t="Include" />
             </e>
             <e p="ProvinceMenu" t="Include">
+              <e p="ProvinceGoldLabelController.cs" t="Include" />
+              <e p="ProvinceManpowerLabelController.cs" t="Include" />
               <e p="ProvinceMenuController.cs" t="Include" />
               <e p="ProvinceNameLabelController.cs" t="Include" />
               <e p="ProvinceOwnerLabelController.cs" t="Include" />
