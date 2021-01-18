@@ -20,11 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e07e5c7b-9222-4973-a516-0b6c39e0665b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerInfo/MonthlyGoldIncreaseLabelController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerInfo/MonthlyGoldIncreaseLabelController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerInfo/MonthlyManpowerIncreaseLabelController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerInfo/MonthlyManpowerIncreaseLabelController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Warlords of Indochina/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Warlords of Indochina/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Warlords of Indochina/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Warlords of Indochina/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/ResourceManagemnt.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/ResourceManagemnt.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerInfo/GoldLabelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerInfo/GoldLabelController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerInfo/ManpowerLabelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerInfo/ManpowerLabelController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/Constants.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/Constants.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainGameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainGameScene.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +52,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Time/TimeLabelController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Time/TimeController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TimeControll/TimeController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/TimeControl/TimeController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Time/TimeSliderController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Time/PauseButtonController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Nations/NationProvinceController.cs" />
@@ -74,6 +75,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/ProvinceMenu/ProvinceManpowerLabelController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Constants.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Economy/ResourceManagemnt.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/TimeControl/TimeController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerInfo/MonthlyGoldIncrease.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerInfo/MonthlyGoldIncreaseLabelController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerInfo/MontlyManpowerIncreaseLabelController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerInfo/MonthlyManpowerIncreaseLabelController.cs" />
       </list>
     </option>
   </component>
@@ -128,7 +134,7 @@
       <workItem from="1610981141853" duration="286000" />
       <workItem from="1610981517574" duration="139000" />
       <workItem from="1610981955601" duration="5114000" />
-      <workItem from="1610992976188" duration="1362000" />
+      <workItem from="1610992976188" duration="3134000" />
     </task>
     <servers />
   </component>

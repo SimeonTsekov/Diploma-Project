@@ -33,7 +33,10 @@
             </e>
             <e p="PlayerInfo" t="Include">
               <e p="GoldLabelController.cs" t="Include" />
+              <e p="HoverablePanelController.cs" t="Include" />
               <e p="ManpowerLabelController.cs" t="Include" />
+              <e p="MonthlyGoldIncreaseLabelController.cs" t="Include" />
+              <e p="MonthlyManpowerIncreaseLabelController.cs" t="Include" />
               <e p="NationLabelController.cs" t="Include" />
             </e>
             <e p="ProvinceMenu" t="Include">
