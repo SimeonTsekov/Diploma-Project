@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using Economy;
+using Economy.Buildings;
 using GlobalDatas;
 using Player;
 using UI.ProvinceMenu;
@@ -16,6 +19,7 @@ namespace Provinces
         private string _gameObjectName;
         private Color _color;
         public ProvinceData ProvinceData { get; set; }
+        public BuildingManagement BuildingManagement { get; private set; }
 
         private void Awake()
         {
@@ -61,6 +65,15 @@ namespace Provinces
             ColorUtility.TryParseHtmlString(ProvinceData.Color, out _color);
             
             _sprite.color = new Color(_color.r, _color.g, _color.b, 0.5f);
+        }
+
+        public void ConstructBuilding(Building building)
+        {
+            var nation = GameObject
+                .FindGameObjectsWithTag("Player")
+                .Single(p => p.GetComponent<PlayerController>().NationId.Equals(ProvinceData.NationId)).GetComponent<PlayerController>();
+            BuildingManagement.Build(building);
+            nation.ResourceManagement.SubstractGold(100);
         }
     }
 }

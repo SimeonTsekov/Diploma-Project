@@ -8,11 +8,9 @@ using Utils;
 
 namespace Player
 {
-    public class PlayerController : MonoBehaviour
+    public class PlayerController : NationController
     {
         public static PlayerController Instance { get; private set; }
-        public string NationId { get; private set; }
-        public ResourceManagemnt ResourceManagement { get; private set; }
 
         private void Awake()
         {
@@ -28,6 +26,11 @@ namespace Player
         public void SetNationId(string nationId)
         {
             this.NationId = nationId;
+        }
+
+        public void SubstractGold(int amount)
+        {
+            ResourceManagement.SubstractGold(amount);
         }
     }
 }

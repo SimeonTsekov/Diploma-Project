@@ -54,5 +54,10 @@ namespace Economy
 		{
 			return Provinces.Sum(province => province.Gold);
 		}
+
+		public void SubstractGold(int amount)
+		{
+			Gold -= amount;
+		}
 	}
 }

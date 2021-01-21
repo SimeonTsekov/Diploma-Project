@@ -1,5 +1,6 @@
 ﻿using GlobalDatas;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace UI.ProvinceMenu
 {
@@ -9,6 +10,8 @@ namespace UI.ProvinceMenu
         public ProvinceData ProvinceData;
         public RectTransform menuTransform;
         private bool _isHidden;
+        private bool _buildingsPanelActive;
+        public GameObject buildingsPanel;
 
         private void Awake()
         {
@@ -21,6 +24,8 @@ namespace UI.ProvinceMenu
         private void Start()
         {
             _isHidden = true;
+            _buildingsPanelActive = false;
+            buildingsPanel.SetActive(_buildingsPanelActive);
         }
 
         public void UpdateProvinceData(ProvinceData provinceData)
@@ -34,6 +39,12 @@ namespace UI.ProvinceMenu
             _isHidden = false;
             menuTransform.anchorMax = Vector2.zero;
             menuTransform.anchorMin = Vector2.zero;
+        }
+
+        public void ShowBuildings()
+        {
+            _buildingsPanelActive = !_buildingsPanelActive;
+            buildingsPanel.SetActive(_buildingsPanelActive);
         }
     }
 }
