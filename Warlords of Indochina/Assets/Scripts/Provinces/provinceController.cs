@@ -7,6 +7,7 @@ using GlobalDatas;
 using Player;
 using UI.ProvinceMenu;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 namespace Provinces
@@ -35,7 +36,10 @@ namespace Provinces
 
         private void OnMouseEnter()
         {
-            _sprite.color = new Color(_color.r, _color.g, _color.b, 0.75f);
+            if (!EventSystem.current.IsPointerOverGameObject())
+            {
+                _sprite.color = new Color(_color.r, _color.g, _color.b, 0.75f);
+            }
         }
 
         private void OnMouseExit()
@@ -46,16 +50,20 @@ namespace Provinces
         private void OnMouseDown()
         {
             var currentScene = SceneManager.GetActiveScene().name;
-            
-            if (Equals(currentScene, "MainGameScene"))
+
+            if (!EventSystem.current.IsPointerOverGameObject())
             {
-                ProvinceMenuController.Instance.UpdateProvinceData(this.ProvinceData);
-                ProvinceMenuController.Instance.Show();
-            } else if (Equals(currentScene, "NationSelectionScene"))
-            {
-                PlayerController.Instance.SetNationId(ProvinceData.NationId);
+                if (Equals(currentScene, "MainGameScene"))
+                {
+                    ProvinceMenuController.Instance.UpdateProvinceData(this.ProvinceData);
+                    ProvinceMenuController.Instance.Show();
+                    Debug.Log(ProvinceMenuController.Instance.ProvinceData.BuildingSlots);
+                } else if (Equals(currentScene, "NationSelectionScene"))
+                {
+                    PlayerController.Instance.SetNationId(ProvinceData.NationId);
+                }
             }
-            
+
             ProvinceMenuController.Instance.Show();
         }
 
