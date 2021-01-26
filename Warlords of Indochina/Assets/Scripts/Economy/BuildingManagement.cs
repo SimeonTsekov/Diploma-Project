@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Economy.Buildings;
 using Player;
 using UnityEngine;
@@ -16,11 +17,7 @@ namespace Economy
 
 		public bool Build(Building building)
 		{
-			if (Buildings.Contains(building))
-			{
-				return false;
-			}
-			
+			Debug.Log(building.GetType());
 			Buildings.Add(building);
 
 			return true;

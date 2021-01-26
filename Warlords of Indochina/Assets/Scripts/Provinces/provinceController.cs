@@ -32,6 +32,7 @@ namespace Provinces
         private void Start()
         {
             ProvinceManagement.Instance.ProvinceFetchedListeners.Add(this);
+            BuildingManagement = gameObject.AddComponent<BuildingManagement>();
         }
 
         private void OnMouseEnter()
@@ -75,13 +76,20 @@ namespace Provinces
             _sprite.color = new Color(_color.r, _color.g, _color.b, 0.5f);
         }
 
-        public void ConstructBuilding(Building building)
+        public bool ConstructBuilding(Building building)
         {
             var nation = GameObject
                 .FindGameObjectsWithTag("Player")
                 .Single(p => p.GetComponent<PlayerController>().NationId.Equals(ProvinceData.NationId)).GetComponent<PlayerController>();
+
+            if (nation.ResourceManagement.Gold < building.Cost || Array.Exists<Building>(BuildingManagement.Buildings.ToArray(), b => b.GetType() == building.GetType()))
+            {
+                return false;
+            }
+            
             BuildingManagement.Build(building);
-            nation.ResourceManagement.SubstractGold(100);
+            nation.ResourceManagement.SubstractGold(building.Cost);
+            return true;
         }
     }
 }

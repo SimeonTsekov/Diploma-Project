@@ -29,11 +29,12 @@ namespace Economy
 			{
 				var tempProvince = province.GetComponent<ProvinceController>().ProvinceData;
 				this.Provinces.Add(tempProvince);
-				Gold += tempProvince.Gold;
+				//Gold += tempProvince.Gold;
 				MaximumManpower += tempProvince.Manpower;
 			}
 
-			Gold *= Constants.MonthsInAnYear;
+			//Gold *= Constants.MonthsInAnYear;
+			Gold = 1000;
 			MaximumManpower += Constants.ManpowerIncrease;
 			Manpower = (int) Math.Round((double)(MaximumManpower * 3) / 4);
 		}

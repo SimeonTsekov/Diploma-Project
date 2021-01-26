@@ -3,6 +3,6 @@
 	public abstract class Building
 	{
 		protected string Name;
-		protected int Cost;
+		public int Cost { get; protected set; }
 	}
 }

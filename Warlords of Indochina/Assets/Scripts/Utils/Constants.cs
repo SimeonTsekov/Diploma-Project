@@ -11,5 +11,8 @@
 		public static readonly int ManpowerIncrease = 10000;
 		public static readonly int MonthsInAnYear = 12;
 		public static readonly int ManpowerRecoverySpeedDivider = 120;
+		public const string MineButtonIdentifier = "Mine";
+		public static readonly int BaseBuildingCost = 100;
+		public static readonly int BaseMineProduction = 50;
 	}
 }
