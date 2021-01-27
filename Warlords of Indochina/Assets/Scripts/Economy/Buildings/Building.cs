@@ -2,7 +2,8 @@
 {
 	public abstract class Building
 	{
-		protected string Name;
+		public string Name { get; protected set; }
 		public int Cost { get; protected set; }
+		public bool Built{ get; protected set; }
 	}
 }

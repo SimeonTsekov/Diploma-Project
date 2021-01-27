@@ -9,6 +9,7 @@ using UI.ProvinceMenu;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace Provinces
 {
@@ -27,12 +28,12 @@ namespace Provinces
             _gameObjectName = gameObject.name;
             _sprite = GetComponent<SpriteRenderer>();
             gameObject.tag = "Province";
+            BuildingManagement = gameObject.AddComponent<BuildingManagement>();
         }
 
         private void Start()
         {
             ProvinceManagement.Instance.ProvinceFetchedListeners.Add(this);
-            BuildingManagement = gameObject.AddComponent<BuildingManagement>();
         }
 
         private void OnMouseEnter()
@@ -58,7 +59,6 @@ namespace Provinces
                 {
                     ProvinceMenuController.Instance.UpdateProvinceData(this.ProvinceData);
                     ProvinceMenuController.Instance.Show();
-                    Debug.Log(ProvinceMenuController.Instance.ProvinceData.BuildingSlots);
                 } else if (Equals(currentScene, "NationSelectionScene"))
                 {
                     PlayerController.Instance.SetNationId(ProvinceData.NationId);
@@ -74,9 +74,10 @@ namespace Provinces
             ColorUtility.TryParseHtmlString(ProvinceData.Color, out _color);
             
             _sprite.color = new Color(_color.r, _color.g, _color.b, 0.5f);
+            BuildingManagement.Buildings = Enumerable.Repeat<Building>(new EmptyBuilding(), ProvinceData.BuildingSlots).ToList();
         }
 
-        public bool ConstructBuilding(Building building)
+        public bool ConstructBuilding(Building building, int index)
         {
             var nation = GameObject
                 .FindGameObjectsWithTag("Player")
@@ -87,7 +88,7 @@ namespace Provinces
                 return false;
             }
             
-            BuildingManagement.Build(building);
+            BuildingManagement.Build(building, index);
             nation.ResourceManagement.SubstractGold(building.Cost);
             return true;
         }

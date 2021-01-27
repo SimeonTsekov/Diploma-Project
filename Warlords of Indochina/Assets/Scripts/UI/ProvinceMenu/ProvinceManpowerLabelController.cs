@@ -20,9 +20,8 @@ namespace UI.ProvinceMenu
             {
                 _txt.text = "Local Gold: " + ProvinceMenuController.Instance.ProvinceData.Gold;
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                Debug.Log(e);
             }
         }
     }

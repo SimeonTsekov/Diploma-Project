@@ -995,7 +995,7 @@ GameObject:
   - component: {fileID: 264276833}
   m_Layer: 5
   m_Name: 4
-  m_TagString: Untagged
+  m_TagString: BuildingSlot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3432,7 +3432,7 @@ GameObject:
   - component: {fileID: 654602270}
   m_Layer: 5
   m_Name: 5
-  m_TagString: Untagged
+  m_TagString: BuildingSlot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5065,7 +5065,7 @@ GameObject:
   - component: {fileID: 949380148}
   m_Layer: 5
   m_Name: 2
-  m_TagString: Untagged
+  m_TagString: BuildingSlot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8998,7 +8998,7 @@ GameObject:
   - component: {fileID: 1482492066}
   m_Layer: 5
   m_Name: 6
-  m_TagString: Untagged
+  m_TagString: BuildingSlot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10847,7 +10847,7 @@ GameObject:
   - component: {fileID: 1742559021}
   m_Layer: 5
   m_Name: 3
-  m_TagString: Untagged
+  m_TagString: BuildingSlot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11118,7 +11118,7 @@ GameObject:
   - component: {fileID: 1747531818}
   m_Layer: 5
   m_Name: 1
-  m_TagString: Untagged
+  m_TagString: BuildingSlot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

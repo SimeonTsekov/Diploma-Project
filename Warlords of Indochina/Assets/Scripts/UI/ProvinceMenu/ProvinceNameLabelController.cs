@@ -20,9 +20,8 @@ namespace UI.ProvinceMenu
             {
                 _txt.text = ProvinceMenuController.Instance.ProvinceData.Name;
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                Debug.Log(e);
             }
         }
     }

@@ -21,9 +21,8 @@ namespace UI.ProvinceMenu
             {
                 _txt.text = "Owner: " + ProvinceMenuController.Instance.ProvinceData.Owner;
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                Debug.Log(e);
             }
         }
     }

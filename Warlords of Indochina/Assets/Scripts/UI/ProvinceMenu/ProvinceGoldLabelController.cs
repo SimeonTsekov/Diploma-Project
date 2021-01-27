@@ -20,9 +20,8 @@ namespace UI.ProvinceMenu
             {
                 _txt.text = "Local Manpower: " + ProvinceMenuController.Instance.ProvinceData.Manpower;
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                Debug.Log(e);
             }
         }
     }

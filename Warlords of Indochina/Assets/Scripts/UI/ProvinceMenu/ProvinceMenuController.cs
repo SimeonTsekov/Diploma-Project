@@ -14,6 +14,7 @@ namespace UI.ProvinceMenu
     {
         public static ProvinceMenuController Instance { get; private set; }
         public ProvinceData ProvinceData;
+        private ProvinceController _province;
         public RectTransform menuTransform;
         private bool _isHidden;
         public int currentSlot;
@@ -43,6 +44,34 @@ namespace UI.ProvinceMenu
         public void UpdateProvinceData(ProvinceData provinceData)
         {
             this.ProvinceData = provinceData;
+            _province = GameObject.FindGameObjectsWithTag("Province")
+                .Single(p => p.GetComponent<ProvinceController>().ProvinceData.Name.Equals(ProvinceData.Name))
+                .GetComponent<ProvinceController>();
+            if (buildingSlotsPanel.activeSelf)
+            {
+                UpdateProvinceSlots();
+            }
+        }
+
+        private void UpdateProvinceSlots()
+        {
+            for (int i=0; i<_province.BuildingManagement.Buildings.Count; i++)
+            {
+                var slot = GameObject.FindGameObjectsWithTag("BuildingSlot")
+                    .Single(s => int.Parse(s.name) == i+1);
+                var building = _province.BuildingManagement.Buildings[i];
+
+                if (!building.Built)
+                {
+                    slot.GetComponent<Button>().interactable = true;
+                    slot.GetComponentInChildren<Text>().text = "+";
+                }
+                else
+                {
+                    slot.GetComponentInChildren<Text>().text = building.Name;
+                    slot.GetComponent<Button>().interactable = false;
+                }
+            }
         }
         
         public void Show()
@@ -57,6 +86,7 @@ namespace UI.ProvinceMenu
         {
             _buildingSlotsPanelActive = !_buildingSlotsPanelActive;
             buildingSlotsPanel.SetActive(_buildingSlotsPanelActive);
+            UpdateProvinceSlots();
         }
 
         public void ShowBuildings(Button button)
@@ -77,14 +107,12 @@ namespace UI.ProvinceMenu
         public void OnBuild(Button button)
         {
             var building = button.name;
-            var province = GameObject.FindGameObjectsWithTag("Province")
-                .Single(p => p.GetComponent<ProvinceController>().ProvinceData.Name.Equals(ProvinceData.Name))
-                .GetComponent<ProvinceController>();
-            
+
             switch (building)
             {
                 case Constants.MineButtonIdentifier :
-                    Debug.Log(province.ConstructBuilding(new Mine()));
+                    _province.ConstructBuilding(new Mine(), currentSlot-1);
+                    UpdateProvinceSlots();
                     break;
             }
         }

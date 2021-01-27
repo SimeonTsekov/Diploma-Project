@@ -11,6 +11,7 @@ namespace Economy.Buildings
 			this.Name = "Mine";
 			this.Cost = Constants.BaseBuildingCost;
 			this.ProductionAmount = Constants.BaseMineProduction;
+			this.Built = true;
 		}
 	}
 }
