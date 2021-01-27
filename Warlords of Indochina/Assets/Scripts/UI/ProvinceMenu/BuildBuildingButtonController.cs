@@ -1,23 +1,40 @@
 ﻿using System;
-using GlobalDatas;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace UI.ProvinceMenu
 {
-    public class BuildBuildingButtonController : MonoBehaviour
-    {
-        private int _slotNum;
-        private Button _button;
-        private void Start()
-        {
-            _slotNum = int.Parse(gameObject.name);
-            _button = gameObject.GetComponent<Button>();
-        }
+	public class BuildBuildingButtonController : MonoBehaviour
+	{
+		private Button _button;
+		private Text _text;
 
-        private void Update()
-        {
-            _button.interactable = _slotNum <= ProvinceMenuController.Instance.ProvinceData.BuildingSlots;
-        }
-    }
+		private void Awake()
+		{
+			_button = GetComponent<Button>();
+			_text = GetComponentInChildren<Text>();
+		}
+
+		private void Update()
+		{
+			try
+			{
+				if (ProvinceMenuController.Instance.province.BuildingManagement.Buildings
+					.Exists(b => b.Name.Equals(gameObject.name)))
+				{
+					_text.text = "Built";
+					_button.interactable = false;
+				}
+				else
+				{
+					_button.interactable = true;
+					_text.text = "Build";
+				}
+			}
+			catch (Exception)
+			{
+			}
+		}
+	}
 }

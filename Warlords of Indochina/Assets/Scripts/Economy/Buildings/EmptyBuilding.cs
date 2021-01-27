@@ -5,6 +5,7 @@
 		public EmptyBuilding()
 		{
 			this.Built = false;
+			this.Name = "";
 		}
 	}
 }

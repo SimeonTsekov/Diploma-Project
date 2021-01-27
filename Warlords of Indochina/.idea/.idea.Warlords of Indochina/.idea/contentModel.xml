@@ -54,6 +54,7 @@
               <e p="ProvinceNameLabelController.cs" t="Include" />
               <e p="ProvinceOwnerLabelController.cs" t="Include" />
               <e p="ProvinceTerrainLabelController.cs" t="Include" />
+              <e p="SlotButtonController.cs" t="Include" />
             </e>
             <e p="Time" t="Include">
               <e p="PauseButtonController.cs" t="Include" />
