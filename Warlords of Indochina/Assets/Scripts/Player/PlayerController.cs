@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Economy;
 using GlobalDatas;
+using Nations;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Utils;

@@ -11,8 +11,10 @@
           <e p="Economy" t="Include">
             <e p="BuildingManagement.cs" t="Include" />
             <e p="Buildings" t="Include">
+              <e p="Barracks.cs" t="Include" />
               <e p="Building.cs" t="Include" />
               <e p="EmptyBuilding.cs" t="Include" />
+              <e p="Fort.cs" t="Include" />
               <e p="Mine.cs" t="Include" />
             </e>
             <e p="ResourceManagemnt.cs" t="Include" />
@@ -21,8 +23,10 @@
           <e p="GlobalDatas" t="Include">
             <e p="ProvinceData.cs" t="Include" />
           </e>
-          <e p="Player" t="Include">
+          <e p="Nations" t="Include">
             <e p="NationController.cs" t="Include" />
+          </e>
+          <e p="Player" t="Include">
             <e p="PlayerController.cs" t="Include" />
           </e>
           <e p="Provinces" t="Include">

@@ -16,7 +16,7 @@ namespace UI.PlayerInfo
 
         private void Update()
         {
-            _txt.text = "Gold: " + PlayerController.Instance.ResourceManagement.Gold;
+            _txt.text = "Gold: " + PlayerController.Instance.ResourceManagement.Gold.ToString("0.00");
         }
     }
 }

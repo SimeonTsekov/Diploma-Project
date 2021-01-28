@@ -12,7 +12,9 @@
 		public static readonly int MonthsInAnYear = 12;
 		public static readonly int ManpowerRecoverySpeedDivider = 120;
 		public const string MineButtonIdentifier = "Mine";
+		public const string BarracksButtonIdentifier = "Barracks";
+		public const string FortButtonIdentifier = "Fort";
 		public static readonly int BaseBuildingCost = 100;
-		public static readonly int BaseMineProduction = 50;
+		public static readonly float BaseProduction = 50f;
 	}
 }

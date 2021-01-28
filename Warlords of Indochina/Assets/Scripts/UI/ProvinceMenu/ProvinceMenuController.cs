@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using Economy.Buildings;
 using GlobalDatas;
+using Player;
 using Provinces;
 using UnityEditor.UIElements;
 using UnityEngine;
@@ -22,6 +23,7 @@ namespace UI.ProvinceMenu
         private bool _buildingsPanelActive;
         public GameObject buildingSlotsPanel;
         public GameObject buildingsPanel;
+        public GameObject buildingsButton;
 
         private void Awake()
         {
@@ -47,6 +49,7 @@ namespace UI.ProvinceMenu
             province = GameObject.FindGameObjectsWithTag("Province")
                 .Single(p => p.GetComponent<ProvinceController>().ProvinceData.Name.Equals(ProvinceData.Name))
                 .GetComponent<ProvinceController>();
+            UpdateBuildingsButtonState();
             if (buildingSlotsPanel.activeSelf)
             {
                 UpdateProvinceSlots();
@@ -72,6 +75,12 @@ namespace UI.ProvinceMenu
                     slot.GetComponent<Button>().interactable = false;
                 }
             }
+        }
+
+        private void UpdateBuildingsButtonState()
+        {
+            buildingsButton.SetActive(province.ProvinceData.NationId.Equals(
+                PlayerController.Instance.NationId));
         }
         
         public void Show()
@@ -112,6 +121,14 @@ namespace UI.ProvinceMenu
             {
                 case Constants.MineButtonIdentifier :
                     province.ConstructBuilding(new Mine(), currentSlot-1);
+                    UpdateProvinceSlots();
+                    break;
+                case  Constants.BarracksButtonIdentifier:
+                    province.ConstructBuilding(new Barracks(), currentSlot-1);
+                    UpdateProvinceSlots();
+                    break;
+                case  Constants.FortButtonIdentifier:
+                    province.ConstructBuilding(new Fort(), currentSlot-1);
                     UpdateProvinceSlots();
                     break;
             }

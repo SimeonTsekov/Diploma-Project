@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace UI.ProvinceMenu
 {
-    public class ProvinceManpowerLabelController : MonoBehaviour
+    public class ProvinceGoldLabelController : MonoBehaviour
     {
         private Text _txt;
 
@@ -18,7 +18,7 @@ namespace UI.ProvinceMenu
         {
             try
             {
-                _txt.text = "Local Gold: " + ProvinceMenuController.Instance.ProvinceData.Gold;
+                _txt.text = "Local Gold: " + ProvinceMenuController.Instance.province.ProvinceData.Gold.ToString("0.00");
             }
             catch (Exception)
             {

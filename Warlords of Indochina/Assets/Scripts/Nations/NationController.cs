@@ -1,7 +1,7 @@
 ﻿using Economy;
 using UnityEngine;
 
-namespace Player
+namespace Nations
 {
 	public abstract class NationController : MonoBehaviour
 	{
