@@ -7,5 +7,14 @@
 		public static readonly float Unpause = 1.0f;
 		public static readonly int MinSpeed = 1;
 		public static readonly int MaxSpeed = 5;
+		public static readonly int StartingProvinceManpower = 1000;
+		public static readonly int ManpowerIncrease = 10000;
+		public static readonly int MonthsInAnYear = 12;
+		public static readonly int ManpowerRecoverySpeedDivider = 120;
+		public const string MineButtonIdentifier = "Mine";
+		public const string BarracksButtonIdentifier = "Barracks";
+		public const string FortButtonIdentifier = "Fort";
+		public static readonly int BaseBuildingCost = 100;
+		public static readonly float BaseProduction = 50f;
 	}
 }

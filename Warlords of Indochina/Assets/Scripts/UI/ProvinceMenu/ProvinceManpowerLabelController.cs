@@ -4,21 +4,21 @@ using UnityEngine.UI;
 
 namespace UI.ProvinceMenu
 {
-    public class ProvinceTerrainLabelController : MonoBehaviour
+    public class ProvinceManpowerLabelController : MonoBehaviour
     {
         private Text _txt;
 
         private void Start()
         {
             _txt = GetComponent<Text>();
-            _txt.text = "Terrain: ";
+            _txt.text = "";
         }
 
         private void Update()
         {
             try
             {
-                _txt.text = "Terrain: " + ProvinceMenuController.Instance.ProvinceData.Terrain;
+                _txt.text = "Local Manpower: " + ProvinceMenuController.Instance.province.ProvinceData.Manpower;
             }
             catch (Exception)
             {

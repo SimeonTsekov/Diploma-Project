@@ -15,20 +15,24 @@ namespace Provinces
             if (Instance == null)
             {
                 Instance = this;
-                DontDestroyOnLoad(gameObject);
             }
 
+            await LoadProvinces();
+        }
+
+        private async Task<List<ProvinceData>> GetProvinces()
+        {
+            return await DbController.Instance.GetProvinceInfo();
+        }
+
+        public async Task LoadProvinces()
+        {
             ProvinceFetchedListeners = new List<IProvinceFetchedListener>();
             var provinces = await GetProvinces();
             foreach (var x in ProvinceFetchedListeners)
             {
                 x.OnProvincesFetched(provinces);
             }
-        }
-
-        private async Task<List<ProvinceData>> GetProvinces()
-        {
-            return await DbController.Instance.GetProvinceInfo();
         }
     }
 }
