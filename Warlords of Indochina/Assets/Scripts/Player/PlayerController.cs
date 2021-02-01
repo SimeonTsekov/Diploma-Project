@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Combat;
 using Economy;
 using GlobalDatas;
 using Nations;
@@ -20,18 +21,9 @@ namespace Player
                 Instance = this;
             }
             DontDestroyOnLoad(gameObject);
-            ResourceManagement = gameObject.AddComponent<ResourceManagemnt>();
+            ResourceManagement = gameObject.AddComponent<ResourceManagement>();
+            CombatController = gameObject.AddComponent<CombatController>();
             NationId = "";
-        }
-
-        public void SetNationId(string nationId)
-        {
-            this.NationId = nationId;
-        }
-
-        public void SubstractGold(int amount)
-        {
-            ResourceManagement.SubstractGold(amount);
         }
     }
 }

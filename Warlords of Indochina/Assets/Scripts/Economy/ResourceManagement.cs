@@ -8,16 +8,16 @@ using Utils;
 
 namespace Economy
 {
-	public class ResourceManagemnt : MonoBehaviour
+	public class ResourceManagement : MonoBehaviour
 	{
-		public List<ProvinceData> Provinces;
+		private List<ProvinceData> _provinces;
 		public float Gold { get; private set; }
 		public int Manpower { get; private set; }
-		public int MaximumManpower { get; private set; }
+		private int MaximumManpower { get; set; }
 
 		private void Awake()
 		{
-			Provinces = new List<ProvinceData>();
+			_provinces = new List<ProvinceData>();
 			Gold = 0;
 			Manpower = 0;
 			MaximumManpower = 0;
@@ -28,7 +28,7 @@ namespace Economy
 			foreach (var province in provinces)
 			{
 				var tempProvince = province.GetComponent<ProvinceController>().ProvinceData;
-				this.Provinces.Add(tempProvince);
+				this._provinces.Add(tempProvince);
 				//Gold += tempProvince.Gold;
 				MaximumManpower += tempProvince.Manpower;
 			}
@@ -47,13 +47,13 @@ namespace Economy
 
 		public int GetMonthlyManpowerRecovery()
 		{
-			return (Constants.ManpowerIncrease + Provinces.Sum(province => province.Manpower)) /
+			return (Constants.ManpowerIncrease + _provinces.Sum(province => province.Manpower)) /
 			       Constants.ManpowerRecoverySpeedDivider;
 		}
 
 		public float GetMonthlyGold()
 		{
-			return Provinces.Sum(province => province.Gold);
+			return _provinces.Sum(province => province.Gold);
 		}
 
 		public void SubstractGold(int amount)

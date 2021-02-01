@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Province
   - BuildingSlot
+  - Canvas
   layers:
   - Default
   - TransparentFX

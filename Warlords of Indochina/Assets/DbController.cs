@@ -6,6 +6,7 @@ using System.Data;
 using System;
 using System.Threading.Tasks;
 using GlobalDatas;
+using Player;
 using Provinces;
 
 public class DbController : MonoBehaviour
@@ -74,6 +75,36 @@ public class DbController : MonoBehaviour
         return provinces;
     }
 
+    public NationData GetNationInfo(string nationId)
+    {
+        var nationData = new NationData();
+        
+        _sqlQuery = "SELECT n.NationId, " +
+                    "n.Name, " +
+                    "n.Color, " +
+                    "n.Capital, " +
+                    "n.StartingTroops "
+                    + "FROM Nations n "
+                    + "WHERE n.NationId LIKE '" + PlayerController.Instance.NationId + "'";
+        _dbcmd.CommandText = _sqlQuery;
+        _reader = _dbcmd.ExecuteReader();
+        
+        while (_reader.Read())
+        {
+            nationData = new NationData(
+                _reader.GetString(0), 
+                _reader.GetString(1),
+                _reader.GetString(2),
+                _reader.GetString(3),
+                _reader.GetInt32(4));
+        }
+        
+        _reader.Close();
+        _reader = null;
+
+        return nationData;
+    }
+    
     private void OnDestroy()
     {
         _dbcmd.Dispose();

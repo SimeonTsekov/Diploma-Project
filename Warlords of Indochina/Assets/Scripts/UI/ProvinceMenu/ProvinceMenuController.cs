@@ -58,7 +58,7 @@ namespace UI.ProvinceMenu
 
         private void UpdateProvinceSlots()
         {
-            for (int i=0; i<province.BuildingManagement.Buildings.Count; i++)
+            for (var i=0; i<province.BuildingManagement.Buildings.Count; i++)
             {
                 var slot = GameObject.FindGameObjectsWithTag("BuildingSlot")
                     .Single(s => int.Parse(s.name) == i+1);
@@ -121,17 +121,16 @@ namespace UI.ProvinceMenu
             {
                 case Constants.MineButtonIdentifier :
                     province.ConstructBuilding(new Mine(), currentSlot-1);
-                    UpdateProvinceSlots();
                     break;
                 case  Constants.BarracksButtonIdentifier:
                     province.ConstructBuilding(new Barracks(), currentSlot-1);
-                    UpdateProvinceSlots();
                     break;
                 case  Constants.FortButtonIdentifier:
                     province.ConstructBuilding(new Fort(), currentSlot-1);
-                    UpdateProvinceSlots();
                     break;
             }
+            
+            UpdateProvinceSlots();
         }
     }
 }

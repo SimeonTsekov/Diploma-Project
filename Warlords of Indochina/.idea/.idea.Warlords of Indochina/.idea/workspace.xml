@@ -20,24 +20,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e07e5c7b-9222-4973-a516-0b6c39e0665b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Buildings/Barracks.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Buildings/Barracks.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Buildings/Fort.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Buildings/Fort.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Combat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/CombatController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/CombatController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GlobalDatas/NationData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GlobalDatas/NationData.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Warlords of Indochina/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Warlords of Indochina/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Warlords of Indochina/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Warlords of Indochina/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Warlords of Indochina/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Warlords of Indochina/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Database.db" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Database.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DbController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DbController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainGameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainGameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/Buildings/Mine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/Buildings/Mine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/NationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Nations/NationController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/NationController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Nations/NationController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/NationSelectionScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/NationSelectionScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/ResourceManagemnt.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/ResourceManagement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/ResourceManagemnt.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/ResourceManagement.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameStateController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameStateController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Nations/NationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Nations/NationController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerInfo/GoldLabelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerInfo/GoldLabelController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerInfo/MonthlyGoldIncreaseLabelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerInfo/MonthlyGoldIncreaseLabelController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ProvinceMenu/ProvinceGoldLabelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ProvinceMenu/ProvinceGoldLabelController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ProvinceMenu/ProvinceManpowerLabelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ProvinceMenu/ProvinceManpowerLabelController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ProvinceMenu/ProvinceMenuController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ProvinceMenu/ProvinceMenuController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/Constants.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/Constants.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,12 +52,12 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/94C5F4C3-8CDC-42D2-B006-F8BADEF04394/80/9c95caa1/Time.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/63DD8BF9-8CFA-4BA9-85AF-735EF1A56BA9/de/544df211/List`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Combat/ArmyController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/63DD8BF9-8CFA-4BA9-85AF-735EF1A56BA9/c5/ef7b8e4d/Task.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Provinces/IprovinceFetchedListener.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Time/TimeLabelController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Time/TimeController.cs" />
@@ -72,17 +73,13 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/NationPicker/NationSelectorController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerInfo/NationLabelController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GlobalDatas/ProvinceData.cs" />
-        <option value="$PROJECT_DIR$/Assets/DbController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerInfo/ManpowerLabelController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameStateController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TimeControl/TimeController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerInfo/MonthlyGoldIncrease.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerInfo/MontlyManpowerIncreaseLabelController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerInfo/MonthlyManpowerIncreaseLabelController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/NationController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/ProvinceMenu/BuildingsPanelController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Economy/ResourceManagemnt.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/ProvinceMenu/ProvinceNameLabelController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/ProvinceMenu/ProvinceOwnerLabelController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/ProvinceMenu/ProvinceTerrainLabelController.cs" />
@@ -93,7 +90,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Economy/Buildings/EmptyBuilding.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/ProvinceMenu/BuildBuildingButtonController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Economy/Buildings/Mine.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Nations/NationController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerInfo/GoldLabelController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerInfo/MonthlyGoldIncreaseLabelController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/ProvinceMenu/ProvinceManpowerLabelController.cs" />
@@ -103,6 +99,16 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Economy/Buildings/Fort.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Constants.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/ProvinceMenu/ProvinceMenuController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CombatController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Economy/ResourceManagemnt.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Economy/ResourceManagement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Combat/CombatController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Combat/ArmyController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GlobalDatas/NationData.cs" />
+        <option value="$PROJECT_DIR$/Assets/DbController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Nations/NationController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameStateController.cs" />
       </list>
     </option>
   </component>
@@ -116,7 +122,7 @@
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -164,6 +170,7 @@
       <workItem from="1611650479012" duration="7904000" />
       <workItem from="1611733220447" duration="9565000" />
       <workItem from="1611820197884" duration="3980000" />
+      <workItem from="1612165607481" duration="7360000" />
     </task>
     <servers />
   </component>
@@ -188,14 +195,14 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="590" y="141" key="RiderGenerateDialog" timestamp="1611821000453">
+    <state x="590" y="141" key="RiderGenerateDialog" timestamp="1612173161149">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="590" y="141" key="RiderGenerateDialog/0.0.1920.1080/-1920.0.1536.864@0.0.1920.1080" timestamp="1611821000453" />
-    <state x="153" y="147" width="1542" height="711" key="SettingsEditor" timestamp="1611650696127">
+    <state x="590" y="141" key="RiderGenerateDialog/0.0.1920.1080/-1920.0.1536.864@0.0.1920.1080" timestamp="1612173161149" />
+    <state x="153" y="147" width="1542" height="711" key="SettingsEditor" timestamp="1612165855463">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="153" y="147" width="1542" height="711" key="SettingsEditor/0.0.1920.1080/-1920.0.1536.864@0.0.1920.1080" timestamp="1611650696127" />
+    <state x="153" y="147" width="1542" height="711" key="SettingsEditor/0.0.1920.1080/-1920.0.1536.864@0.0.1920.1080" timestamp="1612165855463" />
     <state x="616" y="250" key="run.anything.popup" timestamp="1611654540728">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

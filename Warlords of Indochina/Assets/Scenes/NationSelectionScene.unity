@@ -413,7 +413,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd455f4533117eb47bc52409024887fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  province: {fileID: 0}
   menuTransform: {fileID: 976665605}
+  currentSlot: 0
+  buildingSlotsPanel: {fileID: 0}
+  buildingsPanel: {fileID: 0}
+  buildingsButton: {fileID: 0}
 --- !u!1 &207093879
 GameObject:
   m_ObjectHideFlags: 0
@@ -5237,6 +5242,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7624da760c5fdeb4caf4cbd668242a0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  armyPrefab: {fileID: 1848874241961482224, guid: 417de4e3bd7551f44950a6554e81a621,
+    type: 3}
 --- !u!4 &1409331002
 Transform:
   m_ObjectHideFlags: 0
@@ -8510,7 +8517,7 @@ GameObject:
   - component: {fileID: 1942644738}
   m_Layer: 5
   m_Name: UI
-  m_TagString: Untagged
+  m_TagString: Canvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

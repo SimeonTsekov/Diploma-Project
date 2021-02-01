@@ -8,6 +8,10 @@
       <e p="Assets" t="Include">
         <e p="DbController.cs" t="Include" />
         <e p="Scripts" t="Include">
+          <e p="Combat" t="Include">
+            <e p="ArmyController.cs" t="Include" />
+            <e p="CombatController.cs" t="Include" />
+          </e>
           <e p="Economy" t="Include">
             <e p="BuildingManagement.cs" t="Include" />
             <e p="Buildings" t="Include">
@@ -17,10 +21,11 @@
               <e p="Fort.cs" t="Include" />
               <e p="Mine.cs" t="Include" />
             </e>
-            <e p="ResourceManagemnt.cs" t="Include" />
+            <e p="ResourceManagement.cs" t="Include" />
           </e>
           <e p="GameStateController.cs" t="Include" />
           <e p="GlobalDatas" t="Include">
+            <e p="NationData.cs" t="Include" />
             <e p="ProvinceData.cs" t="Include" />
           </e>
           <e p="Nations" t="Include">
