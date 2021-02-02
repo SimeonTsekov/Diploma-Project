@@ -4,6 +4,7 @@ using Economy;
 using GlobalDatas;
 using Provinces;
 using UnityEngine;
+using Utils;
 
 namespace Nations
 {
@@ -14,13 +15,15 @@ namespace Nations
 		public ResourceManagement ResourceManagement { get; protected set; }
 		public CombatController CombatController { get; protected set; }
 		public GameObject armyPrefab;
-		public GameObject Army { get; protected set; }
+		public GameObject Army { get; set; }
 		public GameObject Capital { get; private set; }
 
 		public void CreateArmy()
 		{
+			var capitalPosition = Capital.transform.position;
+			
 			Army = Instantiate(armyPrefab, GameObject.FindGameObjectWithTag("Canvas").transform, false);
-			Army.transform.position = Capital.transform.position;
+			Army.transform.position = new Vector3(capitalPosition.x, capitalPosition.y, capitalPosition.z-Constants.ArmyOffset);
 			Army.GetComponent<ArmyController>().InitializeArmy(NationId, 10000);
 		}
 

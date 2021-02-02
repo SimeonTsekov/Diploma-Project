@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Combat;
 using Economy;
 using Economy.Buildings;
 using GlobalDatas;
@@ -10,6 +11,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Utils;
 
 namespace Provinces
 {
@@ -22,6 +24,8 @@ namespace Provinces
         private Color _color;
         public ProvinceData ProvinceData { get; set; }
         public BuildingManagement BuildingManagement { get; private set; }
+        private Vector3 position;
+        private bool _hovered;
 
         private void Awake()
         {
@@ -29,6 +33,8 @@ namespace Provinces
             _sprite = GetComponent<SpriteRenderer>();
             gameObject.tag = "Province";
             BuildingManagement = gameObject.AddComponent<BuildingManagement>();
+            position = gameObject.transform.position;
+            _hovered = false;
         }
 
         private void Start()
@@ -36,32 +42,44 @@ namespace Provinces
             ProvinceManagement.Instance.ProvinceFetchedListeners.Add(this);
         }
 
+        private void Update()
+        {
+            if (Input.GetMouseButtonDown(1) && _hovered)
+            {
+                PlayerController.Instance.Army.GetComponent<ArmyController>().Move(gameObject);
+            }
+        }
+
         private void OnMouseEnter()
         {
             if (!EventSystem.current.IsPointerOverGameObject())
             {
                 _sprite.color = new Color(_color.r, _color.g, _color.b, 0.75f);
+                _hovered = true;
             }
         }
 
         private void OnMouseExit()
         {
             _sprite.color = new Color(_color.r, _color.g, _color.b, 0.5f);
+            _hovered = false;
         }
 
-        private void OnMouseDown()
+        public void OnMouseDown()
         {
             var currentScene = SceneManager.GetActiveScene().name;
 
             if (!EventSystem.current.IsPointerOverGameObject())
             {
-                if (Equals(currentScene, "MainGameScene"))
+                switch (currentScene)
                 {
-                    ProvinceMenuController.Instance.UpdateProvinceData(this.ProvinceData);
-                    ProvinceMenuController.Instance.Show();
-                } else if (Equals(currentScene, "NationSelectionScene"))
-                {
-                    PlayerController.Instance.SetNationId(ProvinceData.NationId);
+                    case "MainGameScene":
+                        ProvinceMenuController.Instance.UpdateProvinceData(this.ProvinceData);
+                        ProvinceMenuController.Instance.Show();
+                        break;
+                    case "NationSelectionScene":
+                        PlayerController.Instance.SetNationId(ProvinceData.NationId);
+                        break;
                 }
             }
 

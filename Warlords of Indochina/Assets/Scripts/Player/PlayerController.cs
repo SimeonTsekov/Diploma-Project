@@ -25,5 +25,7 @@ namespace Player
             CombatController = gameObject.AddComponent<CombatController>();
             NationId = "";
         }
+
+
     }
 }
