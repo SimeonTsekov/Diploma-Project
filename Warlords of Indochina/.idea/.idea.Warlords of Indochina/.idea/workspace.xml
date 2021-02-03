@@ -22,9 +22,12 @@
     <list default="true" id="e07e5c7b-9222-4973-a516-0b6c39e0665b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Warlords of Indochina/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Warlords of Indochina/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Warlords of Indochina/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Warlords of Indochina/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Army.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Army.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/NationSelectionScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/NationSelectionScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/ArmyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/ArmyController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameStateController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameStateController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TimeControl/TimeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TimeControl/TimeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Time/TimeLabelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Time/TimeLabelController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/Constants.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/Constants.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +63,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerInfo/NationLabelController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GlobalDatas/ProvinceData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerInfo/ManpowerLabelController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/TimeControl/TimeController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerInfo/MonthlyGoldIncrease.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerInfo/MontlyManpowerIncreaseLabelController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerInfo/MonthlyManpowerIncreaseLabelController.cs" />
@@ -91,9 +93,10 @@
         <option value="$PROJECT_DIR$/Assets/DbController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Nations/NationController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Constants.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Provinces/ProvinceController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameStateController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/TimeControl/TimeController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Constants.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Combat/ArmyController.cs" />
       </list>
     </option>
@@ -158,7 +161,7 @@
       <workItem from="1611820197884" duration="3980000" />
       <workItem from="1612165607481" duration="7492000" />
       <workItem from="1612251446305" duration="6789000" />
-      <workItem from="1612353018731" duration="4570000" />
+      <workItem from="1612353018731" duration="6287000" />
     </task>
     <servers />
   </component>

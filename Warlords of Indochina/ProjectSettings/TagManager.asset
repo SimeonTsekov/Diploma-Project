@@ -7,6 +7,8 @@ TagManager:
   - Province
   - BuildingSlot
   - Canvas
+  - Army
+  - Nation
   layers:
   - Default
   - TransparentFX

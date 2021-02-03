@@ -2,6 +2,7 @@
 using System.Linq;
 using Player;
 using Provinces;
+using TimeControl;
 using UnityEngine;
 using UnityEngine.UI;
 using Utils;
@@ -67,24 +68,27 @@ namespace Combat
             var destinationPosition = destination.transform.position;
             var currentPosition = CurrentProvince.transform.position;
             var hitInfo = new RaycastHit2D();
+            var departMoment = TimeController.Instance.Date;
+            var arrivalMoment = departMoment.AddDays(Constants.TravelTime);
 
-            /*while (currentPosition != destinationPosition)
+            while (currentPosition != destinationPosition)
             {
-                if (Physics.Linecast(currentPosition, destinationPosition, out hitInfo, layerMask, QueryTriggerInteraction.Collide))
-                {
-                    currentPosition = hitInfo.transform.position;
-                    Debug.Log(currentPosition);
-                }
-            }*/
+                /*while(!TimeController.Instance.Date.Equals(arrivalMoment))
+                {}*/
 
-            CurrentProvince.GetComponent<PolygonCollider2D>().enabled = false;
-            CurrentProvince.GetComponent<PolygonCollider2D>().enabled = true;
+                departMoment = TimeController.Instance.Date;
+                arrivalMoment = departMoment.AddDays(Constants.TravelTime);
+                
+                CurrentProvince.GetComponent<PolygonCollider2D>().enabled = false;
+                hitInfo = Physics2D.Linecast(currentPosition, destinationPosition);
+                CurrentProvince.GetComponent<PolygonCollider2D>().enabled = true;
             
-            currentPosition = hitInfo.transform.position;
-            CurrentProvince = GameObject.FindGameObjectsWithTag("Province")
-                .Single(p => p.transform.position.Equals(currentPosition));
-
-            gameObject.transform.position = new Vector3(currentPosition.x, currentPosition.y, currentPosition.z-Constants.ArmyOffset);
+                currentPosition = hitInfo.transform.position;
+                CurrentProvince = GameObject.FindGameObjectsWithTag("Province")
+                    .Single(p => p.transform.position.Equals(currentPosition));
+                
+                gameObject.transform.position = new Vector3(currentPosition.x, currentPosition.y, currentPosition.z-Constants.ArmyOffset);
+            }
         }
     }
 }

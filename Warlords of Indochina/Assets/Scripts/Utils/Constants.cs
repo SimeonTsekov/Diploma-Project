@@ -18,5 +18,6 @@
 		public const float BaseProduction = 50f;
 		public const int ArmyOffset = 1;
 		public const int RegimentTroops = 1000;
+		public const int TravelTime = 15;
 	}
 }
