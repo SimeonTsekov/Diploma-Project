@@ -25,9 +25,6 @@
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Army.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Army.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/ArmyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/ArmyController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameStateController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameStateController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Nations/NationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Nations/NationController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/Constants.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/Constants.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,11 +89,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Combat/CombatController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GlobalDatas/NationData.cs" />
         <option value="$PROJECT_DIR$/Assets/DbController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameStateController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Nations/NationController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Constants.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Provinces/ProvinceController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameStateController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Combat/ArmyController.cs" />
       </list>
     </option>
@@ -161,6 +158,7 @@
       <workItem from="1611820197884" duration="3980000" />
       <workItem from="1612165607481" duration="7492000" />
       <workItem from="1612251446305" duration="6789000" />
+      <workItem from="1612353018731" duration="4570000" />
     </task>
     <servers />
   </component>
@@ -189,10 +187,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="590" y="141" key="RiderGenerateDialog/0.0.1920.1080/-1920.0.1536.864@0.0.1920.1080" timestamp="1612173161149" />
-    <state x="153" y="147" width="1542" height="711" key="SettingsEditor" timestamp="1612252067353">
+    <state x="153" y="147" width="1542" height="711" key="SettingsEditor" timestamp="1612353183376">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="153" y="147" width="1542" height="711" key="SettingsEditor/0.0.1920.1080/-1920.0.1536.864@0.0.1920.1080" timestamp="1612252067353" />
+    <state x="153" y="147" width="1542" height="711" key="SettingsEditor/0.0.1920.1080/-1920.0.1536.864@0.0.1920.1080" timestamp="1612353183376" />
     <state x="616" y="250" key="run.anything.popup" timestamp="1611654540728">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

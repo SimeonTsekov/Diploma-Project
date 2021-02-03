@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 2879739694509481301}
   m_Layer: 5
   m_Name: Army
-  m_TagString: Untagged
+  m_TagString: Army
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -199,6 +199,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 881281928eda7f940beb61b6dd5dfa0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selected: 0
+  stopped: 0
 --- !u!1 &3588415943361469663
 GameObject:
   m_ObjectHideFlags: 0

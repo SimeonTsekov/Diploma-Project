@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Combat;
 using Player;
 using Provinces;
 using UnityEngine;
@@ -18,6 +19,7 @@ public class GameStateController : MonoBehaviour
         await ProvinceManagement.Instance.LoadProvinces();
         
         SetPlayer();
+        SetArmies();
     }
 
     private void SetPlayer()
@@ -30,6 +32,14 @@ public class GameStateController : MonoBehaviour
         PlayerController.Instance.NationData = DbController.Instance.GetNationInfo(PlayerController.Instance.NationId);
         PlayerController.Instance.SetCapital();
         PlayerController.Instance.CreateArmy();
+    }
+
+    private void SetArmies()
+    {
+        foreach (var army in GameObject.FindGameObjectsWithTag("Army"))
+        {
+            army.GetComponent<ArmyController>().SetCurrentProvince();
+        }
     }
 
 }
