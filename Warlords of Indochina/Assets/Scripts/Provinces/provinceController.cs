@@ -46,7 +46,7 @@ namespace Provinces
         {
             if (Input.GetMouseButtonDown(1) && _hovered)
             {
-                PlayerController.Instance.Army.GetComponent<ArmyController>().Move(gameObject);
+                StartCoroutine(PlayerController.Instance.Army.GetComponent<ArmyController>().Move(gameObject));
             }
         }
 

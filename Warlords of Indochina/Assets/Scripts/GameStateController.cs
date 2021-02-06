@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections;
+using System.Linq;
 using Combat;
 using Player;
 using Provinces;
@@ -42,4 +43,8 @@ public class GameStateController : MonoBehaviour
         }
     }
 
+    public IEnumerator Battle(GameObject army1, GameObject army2)
+    {
+        yield return null;
+    }
 }

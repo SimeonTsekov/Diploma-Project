@@ -22,12 +22,9 @@
     <list default="true" id="e07e5c7b-9222-4973-a516-0b6c39e0665b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Warlords of Indochina/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Warlords of Indochina/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Warlords of Indochina/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Warlords of Indochina/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/NationSelectionScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/NationSelectionScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/ArmyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/ArmyController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TimeControl/TimeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TimeControl/TimeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Time/TimeLabelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Time/TimeLabelController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/Constants.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/Constants.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameStateController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameStateController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Nations/NationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Nations/NationController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,11 +89,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/GlobalDatas/NationData.cs" />
         <option value="$PROJECT_DIR$/Assets/DbController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Nations/NationController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Provinces/ProvinceController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameStateController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TimeControl/TimeController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Constants.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Provinces/ProvinceController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Nations/NationController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameStateController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Combat/ArmyController.cs" />
       </list>
     </option>
@@ -111,7 +108,7 @@
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -162,6 +159,7 @@
       <workItem from="1612165607481" duration="7492000" />
       <workItem from="1612251446305" duration="6789000" />
       <workItem from="1612353018731" duration="6287000" />
+      <workItem from="1612613695143" duration="3104000" />
     </task>
     <servers />
   </component>
@@ -190,10 +188,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="590" y="141" key="RiderGenerateDialog/0.0.1920.1080/-1920.0.1536.864@0.0.1920.1080" timestamp="1612173161149" />
-    <state x="153" y="147" width="1542" height="711" key="SettingsEditor" timestamp="1612353183376">
+    <state x="153" y="147" width="1542" height="711" key="SettingsEditor" timestamp="1612616357763">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="153" y="147" width="1542" height="711" key="SettingsEditor/0.0.1920.1080/-1920.0.1536.864@0.0.1920.1080" timestamp="1612353183376" />
+    <state x="153" y="147" width="1542" height="711" key="SettingsEditor/0.0.1920.1080/-1920.0.1536.864@0.0.1920.1080" timestamp="1612616357763" />
     <state x="616" y="250" key="run.anything.popup" timestamp="1611654540728">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

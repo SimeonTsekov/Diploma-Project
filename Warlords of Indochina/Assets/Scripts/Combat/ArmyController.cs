@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Linq;
 using Player;
 using Provinces;
@@ -17,6 +18,7 @@ namespace Combat
         public bool selected;
         public bool stopped;
         public GameObject CurrentProvince { get; private set; }
+        public bool fighting;
 
         private void Awake()
         {
@@ -25,6 +27,7 @@ namespace Combat
             Regiments = 0;
             selected = false;
             stopped = true;
+            fighting = false;
         }
 
         private void Start()
@@ -40,11 +43,12 @@ namespace Combat
             
         }
 
-        public void InitializeArmy(string nationId, int troops)
+        public void InitializeArmy(string nationId, int troops, Color color)
         {
             NationId = nationId;
             Troops = troops;
             Regiments = troops / Constants.RegimentTroops;
+            gameObject.GetComponentInChildren<Image>().color = color;
         }
 
         private void OnArmySelect()
@@ -58,11 +62,11 @@ namespace Combat
             PlayerController.Instance.Army = gameObject;
         }
 
-        public void Move(GameObject destination)
+        public IEnumerator Move(GameObject destination)
         {
             if (!selected || !destination.GetComponent<ProvinceController>().ProvinceData.NationId.Equals(PlayerController.Instance.NationId))
             {
-                return;
+                yield break;
             }
 
             var destinationPosition = destination.transform.position;
@@ -73,8 +77,10 @@ namespace Combat
 
             while (currentPosition != destinationPosition)
             {
-                /*while(!TimeController.Instance.Date.Equals(arrivalMoment))
-                {}*/
+                while (!TimeController.Instance.Date.Equals(arrivalMoment))
+                {
+                    yield return null;
+                }
 
                 departMoment = TimeController.Instance.Date;
                 arrivalMoment = departMoment.AddDays(Constants.TravelTime);
@@ -88,6 +94,14 @@ namespace Combat
                     .Single(p => p.transform.position.Equals(currentPosition));
                 
                 gameObject.transform.position = new Vector3(currentPosition.x, currentPosition.y, currentPosition.z-Constants.ArmyOffset);
+            }
+        }
+
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            if (other.gameObject.CompareTag("Army") && !fighting)
+            {
+                StartCoroutine(GameStateController.Instance.Battle(gameObject, other.gameObject));
             }
         }
     }
