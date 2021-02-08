@@ -104,5 +104,10 @@ namespace Combat
                 StartCoroutine(GameStateController.Instance.Battle(gameObject, other.gameObject));
             }
         }
+
+        public void SetFighting(bool fighting)
+        {
+            this.fighting = fighting;
+        }
     }
 }

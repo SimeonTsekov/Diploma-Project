@@ -23,7 +23,7 @@ namespace Economy
 			MaximumManpower = 0;
 		}
 		
-		public void SetProvinces(List<GameObject> provinces)
+		public List<GameObject> SetProvinces(List<GameObject> provinces)
 		{
 			foreach (var province in provinces)
 			{
@@ -37,6 +37,8 @@ namespace Economy
 			Gold = 1000;
 			MaximumManpower += Constants.ManpowerIncrease;
 			Manpower = (int) Math.Round((double)(MaximumManpower * 3) / 4);
+
+			return provinces;
 		}
 
 		public void UpdateResources()

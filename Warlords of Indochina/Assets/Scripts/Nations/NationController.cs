@@ -21,7 +21,8 @@ namespace Nations
 		public void CreateArmy()
 		{
 			var capitalPosition = Capital.transform.position;
-			
+
+			armyPrefab = Resources.Load("army") as GameObject;
 			Army = Instantiate(armyPrefab, GameObject.FindGameObjectWithTag("Canvas").transform, false);
 			Army.transform.position = new Vector3(capitalPosition.x, capitalPosition.y, capitalPosition.z-Constants.ArmyOffset);
 			ColorUtility.TryParseHtmlString(NationData.Color, out var color);

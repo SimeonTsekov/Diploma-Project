@@ -29,6 +29,7 @@
             <e p="ProvinceData.cs" t="Include" />
           </e>
           <e p="Nations" t="Include">
+            <e p="AIController.cs" t="Include" />
             <e p="NationController.cs" t="Include" />
           </e>
           <e p="Player" t="Include">

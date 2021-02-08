@@ -75,34 +75,33 @@ public class DbController : MonoBehaviour
         return provinces;
     }
 
-    public NationData GetNationInfo(string nationId)
+    public List<NationData> GetNationInfo()
     {
-        var nationData = new NationData();
+        var nationDatas = new List<NationData>();
         
         _sqlQuery = "SELECT n.NationId, " +
                     "n.Name, " +
                     "n.Color, " +
                     "n.Capital, " +
                     "n.StartingTroops "
-                    + "FROM Nations n "
-                    + "WHERE n.NationId LIKE '" + PlayerController.Instance.NationId + "'";
+                    + "FROM Nations n";
         _dbcmd.CommandText = _sqlQuery;
         _reader = _dbcmd.ExecuteReader();
         
         while (_reader.Read())
         {
-            nationData = new NationData(
+            nationDatas.Add(new NationData(
                 _reader.GetString(0), 
                 _reader.GetString(1),
                 _reader.GetString(2),
                 _reader.GetString(3),
-                _reader.GetInt32(4));
+                _reader.GetInt32(4)));
         }
         
         _reader.Close();
         _reader = null;
 
-        return nationData;
+        return nationDatas;
     }
     
     private void OnDestroy()
