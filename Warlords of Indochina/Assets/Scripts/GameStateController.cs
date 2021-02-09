@@ -85,6 +85,8 @@ public class GameStateController : MonoBehaviour
         armyController1.SetFighting(true);
         armyController2.SetFighting(true);
         
+        Debug.Log("FIGHT!!!");
+        
         yield return null;
     }
 }

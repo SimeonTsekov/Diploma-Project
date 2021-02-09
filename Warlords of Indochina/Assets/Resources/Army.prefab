@@ -160,6 +160,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1848874241961482225}
   - component: {fileID: 2879739694509481301}
+  - component: {fileID: 3479920940777646668}
+  - component: {fileID: -1070623530845266586}
   m_Layer: 5
   m_Name: Army
   m_TagString: Army
@@ -199,8 +201,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 881281928eda7f940beb61b6dd5dfa0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NationId: 
   selected: 0
   stopped: 0
+  fighting: 0
+--- !u!65 &3479920940777646668
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848874241961482224}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5, y: 5, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &-1070623530845266586
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848874241961482224}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: Infinity
+  m_AngularDrag: Infinity
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &3588415943361469663
 GameObject:
   m_ObjectHideFlags: 0

@@ -21,6 +21,7 @@ namespace Combat
         public bool stopped;
         public GameObject CurrentProvince { get; private set; }
         public bool fighting;
+        private Collider coll;
 
         private void Awake()
         {
@@ -30,6 +31,7 @@ namespace Combat
             selected = false;
             stopped = true;
             fighting = false;
+            coll = GetComponent<Collider>();
         }
 
         private void Start()
@@ -65,7 +67,8 @@ namespace Combat
 
         public IEnumerator Move(GameObject destination)
         {
-            if (!selected || !destination.GetComponent<ProvinceController>().ProvinceData.NationId.Equals(PlayerController.Instance.NationId))
+            //|| !destination.GetComponent<ProvinceController>().ProvinceData.NationId.Equals(PlayerController.Instance.NationId
+            if (!selected)
             {
                 yield break;
             }
@@ -85,11 +88,13 @@ namespace Combat
 
                 departMoment = TimeController.Instance.Date;
                 arrivalMoment = departMoment.AddDays(Constants.TravelTime);
-                
+
+                coll.enabled = false;
                 CurrentProvince.GetComponent<PolygonCollider2D>().enabled = false;
                 hitInfo = Physics2D.Linecast(currentPosition, destinationPosition);
                 CurrentProvince.GetComponent<PolygonCollider2D>().enabled = true;
-            
+                coll.enabled = true;
+                
                 currentPosition = hitInfo.transform.position;
                 CurrentProvince = GameObject.FindGameObjectsWithTag("Province")
                     .Single(p => p.transform.position.Equals(currentPosition));
@@ -98,8 +103,9 @@ namespace Combat
             }
         }
 
-        private void OnCollisionEnter2D(Collision2D other)
+        private void OnCollisionEnter(Collision other)
         {
+            Debug.Log("lmao");
             if (other.gameObject.CompareTag("Army") && !fighting)
             {
                 StartCoroutine(GameStateController.Instance.Battle(gameObject, other.gameObject));
