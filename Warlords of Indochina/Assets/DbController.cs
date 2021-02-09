@@ -79,12 +79,7 @@ public class DbController : MonoBehaviour
     {
         var nationDatas = new List<NationData>();
         
-        _sqlQuery = "SELECT n.NationId, " +
-                    "n.Name, " +
-                    "n.Color, " +
-                    "n.Capital, " +
-                    "n.StartingTroops "
-                    + "FROM Nations n";
+        _sqlQuery = "SELECT n.NationId, n.Name, n.Color, n.Capital, n.StartingTroops FROM Nations n";
         _dbcmd.CommandText = _sqlQuery;
         _reader = _dbcmd.ExecuteReader();
         

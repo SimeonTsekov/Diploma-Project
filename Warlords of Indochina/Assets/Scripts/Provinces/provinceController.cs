@@ -5,6 +5,7 @@ using Combat;
 using Economy;
 using Economy.Buildings;
 using GlobalDatas;
+using Nations;
 using Player;
 using UI.ProvinceMenu;
 using UnityEngine;
@@ -98,8 +99,8 @@ namespace Provinces
         public bool ConstructBuilding(Building building, int index)
         {
             var nation = GameObject
-                .FindGameObjectsWithTag("Player")
-                .Single(p => p.GetComponent<PlayerController>().NationId.Equals(ProvinceData.NationId)).GetComponent<PlayerController>();
+                .FindGameObjectsWithTag("Nation")
+                .Single(p => p.GetComponent<NationController>().NationId.Equals(ProvinceData.NationId)).GetComponent<NationController>();
 
             if (nation.ResourceManagement.Gold < building.Cost || Array.Exists<Building>(BuildingManagement.Buildings.ToArray(), b => b.GetType() == building.GetType()))
             {

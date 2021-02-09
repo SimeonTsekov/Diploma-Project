@@ -32,13 +32,14 @@ public class GameStateController : MonoBehaviour
 
     private void SetPlayer()
     {
-        PlayerController.Instance.ResourceManagement.SetProvinces(
+        var player = PlayerController.Instance;
+        player.ResourceManagement.SetProvinces(
             SetProvinces(PlayerController.Instance.NationId));
 
-        PlayerController.Instance.NationData = NationDatas.Single(n => n.NationId.Equals(PlayerController.Instance.NationId));
-        NationDatas.RemoveAll(n => n.NationId.Equals(PlayerController.Instance.NationId));
-        PlayerController.Instance.SetCapital();
-        PlayerController.Instance.CreateArmy();
+        player.NationData = NationDatas.Single(n => n.NationId.Equals(player.NationId));
+        NationDatas.RemoveAll(n => n.NationId.Equals(player.NationId));
+        player.SetCapital();
+        player.CreateArmy();
     }
 
     private List<GameObject> SetProvinces(string NationId)
@@ -60,10 +61,11 @@ public class GameStateController : MonoBehaviour
             var newNation = new GameObject();
             var NationData = newNation.AddComponent<AIController>();
             NationData.SetNationData(nation);
-            var Nation = Instantiate(newNation, Vector3.zero, Quaternion.identity);
-            Nation.name = nation.Name;
+            newNation.name = nation.Name + "AI";
+            newNation.tag = "Nation";
             NationData.SetCapital();
             NationData.CreateArmy();
+            NationData.SetNationId(nation.NationId);
         }
     }
 

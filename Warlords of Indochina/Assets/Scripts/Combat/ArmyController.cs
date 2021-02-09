@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Linq;
+using GlobalDatas;
+using Nations;
 using Player;
 using Provinces;
 using TimeControl;
@@ -12,7 +14,7 @@ namespace Combat
 {
     public class ArmyController : MonoBehaviour
     {
-        public string NationId { get; private set; }
+        public string NationId;
         public int Troops { get; private set; }
         public int Regiments { get; private set; }
         public bool selected;
@@ -38,9 +40,8 @@ namespace Combat
         public void SetCurrentProvince()
         {
             CurrentProvince = GameObject.FindGameObjectsWithTag("Nation")
-                .Single(n => n.GetComponent<PlayerController>().NationId.Equals(NationId))
-                .GetComponent<PlayerController>().Capital;
-            
+                .Single(n => n.GetComponent<NationController>().NationId.Equals(NationId))
+                .GetComponent<NationController>().Capital;
         }
 
         public void InitializeArmy(string nationId, int troops, Color color)
