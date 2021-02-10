@@ -8,6 +8,7 @@ using Player;
 using Provinces;
 using TimeControl;
 using UnityEngine;
+using Utils;
 
 
 public class GameStateController : MonoBehaviour
@@ -87,13 +88,14 @@ public class GameStateController : MonoBehaviour
         attackerController.SetFighting(true);
 
         var day = TimeController.Instance.Date;
+        var length = 1;
         var currentDefenderAdvantage = defenderController.CurrentProvince.GetComponent<ProvinceController>()
             .ProvinceData.DeffenderBonus;
         
-        Debug.Log("FIGHT!!! " + defenderController.NationId + " " + attackerController.NationId);
+        Debug.Log("FIGHT!!! " + defenderController.nationId + " " + attackerController.nationId);
 
-        while (!Mathf.Approximately(defenderController.CurrentMorale, 0f) ||
-               !Mathf.Approximately(attackerController.CurrentMorale, 0f))
+        while (!Mathf.Approximately(defenderController.currentMorale, 0f) ||
+               !Mathf.Approximately(attackerController.currentMorale, 0f))
         {
             while (!TimeController.Instance.Date.Equals(day.AddDays(1)))
             {
@@ -102,12 +104,40 @@ public class GameStateController : MonoBehaviour
 
             day = TimeController.Instance.Date;
 
-            var diceRollDeffender = Random.Range(0, 9) + defenderController.Strength - attackerController.Strength + currentDefenderAdvantage;
-            var diceRollAttacker = Random.Range(0, 9) + attackerController.Strength - defenderController.Strength - currentDefenderAdvantage;
+            var diceRollDefender = Mathf.Max(Random.Range(0, 9) + defenderController.strength - attackerController.strength + currentDefenderAdvantage + Constants.BaseDefenderAdvantage, 0);
+            var diceRollAttacker = Mathf.Max(Random.Range(0, 9) + attackerController.strength - defenderController.strength - currentDefenderAdvantage, 0);
+
+            Debug.Log(diceRollAttacker + " " + diceRollDefender);
             
-            Debug.Log("Attacker - " + diceRollAttacker + "; Defender - " + diceRollDeffender);
+            Debug.Log("Attacker cas: " + CalculateLosses(attackerController, diceRollDefender, length));
+
+            if (attackerController.troops <= 0)
+            {
+                Destroy(attacker);
+                break;
+            }
+
+            Debug.Log("Defender cas " + CalculateLosses(defenderController, diceRollAttacker, length));
+            
+            if (defenderController.troops <= 0)
+            {
+                Destroy(defender);
+                break;
+            }
+            
+            length++;
         }
         
         yield return null;
+    }
+
+    private int CalculateLosses(ArmyController armyController, int diceRoll, int length)
+    {
+        var baseCasualties = 15 + 5 * diceRoll;
+        var casualties = baseCasualties + baseCasualties * (1 + length) / 100;
+
+        armyController.troops -= casualties * 10;
+
+        return casualties;
     }
 }

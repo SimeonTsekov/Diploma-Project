@@ -16,7 +16,7 @@ namespace Combat
 
 		private void Update()
 		{
-			moraleSlider.value = _parentArmy.CurrentMorale;
+			moraleSlider.value = _parentArmy.currentMorale;
 		}
 	}
 }

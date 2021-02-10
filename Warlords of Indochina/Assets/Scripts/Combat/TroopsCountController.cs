@@ -16,7 +16,7 @@ namespace Combat
 
 		private void Update()
 		{
-			_txt.text = parentArmy.Troops.ToString();
+			_txt.text = parentArmy.troops.ToString();
 		}
 	}
 }

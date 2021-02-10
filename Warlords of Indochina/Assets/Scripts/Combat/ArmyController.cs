@@ -14,29 +14,29 @@ namespace Combat
 {
     public class ArmyController : MonoBehaviour
     {
-        public string NationId;
-        public int Troops { get; private set; }
+        public string nationId;
+        public int troops;
         public int Regiments { get; private set; }
         public bool selected;
         public bool stopped;
         public GameObject CurrentProvince { get; private set; }
         public bool fighting;
         private Collider coll;
-        public float MaximumMorale;
-        public float CurrentMorale;
-        public int Strength;
+        public float maximumMorale;
+        public float currentMorale;
+        public int strength;
 
         private void Awake()
         {
-            NationId = "";
-            Troops = 0;
+            nationId = "";
+            troops = 0;
             Regiments = 0;
             selected = false;
             stopped = true;
             fighting = false;
             coll = GetComponent<Collider>();
-            MaximumMorale = Constants.MaximumMorale;
-            CurrentMorale = MaximumMorale;
+            maximumMorale = Constants.MaximumMorale;
+            currentMorale = maximumMorale;
         }
 
         private void Start()
@@ -47,22 +47,22 @@ namespace Combat
         public void SetCurrentProvince()
         {
             CurrentProvince = GameObject.FindGameObjectsWithTag("Nation")
-                .Single(n => n.GetComponent<NationController>().NationId.Equals(NationId))
+                .Single(n => n.GetComponent<NationController>().NationId.Equals(nationId))
                 .GetComponent<NationController>().Capital;
         }
 
         public void InitializeArmy(string nationId, int troops, Color color)
         {
-            NationId = nationId;
-            Troops = troops;
+            this.nationId = nationId;
+            this.troops = troops;
             Regiments = troops / Constants.RegimentTroops;
-            Strength = Regiments;
+            strength = Regiments;
             gameObject.GetComponentInChildren<Image>().color = color;
         }
 
         private void OnArmySelect()
         {
-            if (!NationId.Equals(PlayerController.Instance.NationData.NationId))
+            if (!nationId.Equals(PlayerController.Instance.NationData.NationId))
             {
                 return;
             }
