@@ -11,6 +11,8 @@
           <e p="Combat" t="Include">
             <e p="ArmyController.cs" t="Include" />
             <e p="CombatController.cs" t="Include" />
+            <e p="MoraleBarController.cs" t="Include" />
+            <e p="TroopsCountController.cs" t="Include" />
           </e>
           <e p="Economy" t="Include">
             <e p="BuildingManagement.cs" t="Include" />

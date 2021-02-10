@@ -22,6 +22,9 @@ namespace Combat
         public GameObject CurrentProvince { get; private set; }
         public bool fighting;
         private Collider coll;
+        public float MaximumMorale;
+        public float CurrentMorale;
+        public int Strength;
 
         private void Awake()
         {
@@ -32,6 +35,8 @@ namespace Combat
             stopped = true;
             fighting = false;
             coll = GetComponent<Collider>();
+            MaximumMorale = Constants.MaximumMorale;
+            CurrentMorale = MaximumMorale;
         }
 
         private void Start()
@@ -51,6 +56,7 @@ namespace Combat
             NationId = nationId;
             Troops = troops;
             Regiments = troops / Constants.RegimentTroops;
+            Strength = Regiments;
             gameObject.GetComponentInChildren<Image>().color = color;
         }
 
@@ -105,7 +111,6 @@ namespace Combat
 
         private void OnCollisionEnter(Collision other)
         {
-            Debug.Log("lmao");
             if (other.gameObject.CompareTag("Army") && !fighting)
             {
                 StartCoroutine(GameStateController.Instance.Battle(gameObject, other.gameObject));

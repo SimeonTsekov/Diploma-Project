@@ -19,5 +19,6 @@
 		public const int ArmyOffset = 1;
 		public const int RegimentTroops = 1000;
 		public const int TravelTime = 15;
+		public const float MaximumMorale = 2.5f;
 	}
 }

@@ -6,6 +6,7 @@ using GlobalDatas;
 using Nations;
 using Player;
 using Provinces;
+using TimeControl;
 using UnityEngine;
 
 
@@ -77,15 +78,35 @@ public class GameStateController : MonoBehaviour
         }
     }
 
-    public IEnumerator Battle(GameObject army1, GameObject army2)
+    public IEnumerator Battle(GameObject defender, GameObject attacker)
     {
-        var armyController1 = army1.GetComponent<ArmyController>();
-        var armyController2 = army2.GetComponent<ArmyController>();
+        var defenderController = defender.GetComponent<ArmyController>();
+        var attackerController = attacker.GetComponent<ArmyController>();
         
-        armyController1.SetFighting(true);
-        armyController2.SetFighting(true);
+        defenderController.SetFighting(true);
+        attackerController.SetFighting(true);
+
+        var day = TimeController.Instance.Date;
+        var currentDefenderAdvantage = defenderController.CurrentProvince.GetComponent<ProvinceController>()
+            .ProvinceData.DeffenderBonus;
         
-        Debug.Log("FIGHT!!!");
+        Debug.Log("FIGHT!!! " + defenderController.NationId + " " + attackerController.NationId);
+
+        while (!Mathf.Approximately(defenderController.CurrentMorale, 0f) ||
+               !Mathf.Approximately(attackerController.CurrentMorale, 0f))
+        {
+            while (!TimeController.Instance.Date.Equals(day.AddDays(1)))
+            {
+                yield return null;
+            }
+
+            day = TimeController.Instance.Date;
+
+            var diceRollDeffender = Random.Range(0, 9) + defenderController.Strength - attackerController.Strength + currentDefenderAdvantage;
+            var diceRollAttacker = Random.Range(0, 9) + attackerController.Strength - defenderController.Strength - currentDefenderAdvantage;
+            
+            Debug.Log("Attacker - " + diceRollAttacker + "; Defender - " + diceRollDeffender);
+        }
         
         yield return null;
     }
