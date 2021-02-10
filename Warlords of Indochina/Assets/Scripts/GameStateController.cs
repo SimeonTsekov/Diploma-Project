@@ -137,7 +137,8 @@ public class GameStateController : MonoBehaviour
         var casualties = baseCasualties + baseCasualties * (1 + length) / 100;
 
         armyController.troops -= casualties * 10;
-
+        armyController.SetStrength();
+        
         return casualties;
     }
 }

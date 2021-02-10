@@ -121,5 +121,10 @@ namespace Combat
         {
             this.fighting = fighting;
         }
+
+        public void SetStrength()
+        {
+            strength = troops / Constants.RegimentTroops;
+        }
     }
 }
