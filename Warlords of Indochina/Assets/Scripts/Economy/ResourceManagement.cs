@@ -10,14 +10,14 @@ namespace Economy
 {
 	public class ResourceManagement : MonoBehaviour
 	{
-		private List<ProvinceData> _provinces;
+		public List<ProvinceData> Provinces { get; private set; }
 		public float Gold { get; private set; }
 		public int Manpower { get; private set; }
 		private int MaximumManpower { get; set; }
 
 		private void Awake()
 		{
-			_provinces = new List<ProvinceData>();
+			Provinces = new List<ProvinceData>();
 			Gold = 0;
 			Manpower = 0;
 			MaximumManpower = 0;
@@ -28,7 +28,7 @@ namespace Economy
 			foreach (var province in provinces)
 			{
 				var tempProvince = province.GetComponent<ProvinceController>().ProvinceData;
-				this._provinces.Add(tempProvince);
+				this.Provinces.Add(tempProvince);
 				//Gold += tempProvince.Gold;
 				MaximumManpower += tempProvince.Manpower;
 			}
@@ -49,13 +49,13 @@ namespace Economy
 
 		public int GetMonthlyManpowerRecovery()
 		{
-			return (Constants.ManpowerIncrease + _provinces.Sum(province => province.Manpower)) /
+			return (Constants.ManpowerIncrease + Provinces.Sum(province => province.Manpower)) /
 			       Constants.ManpowerRecoverySpeedDivider;
 		}
 
 		public float GetMonthlyGold()
 		{
-			return _provinces.Sum(province => province.Gold);
+			return Provinces.Sum(province => province.Gold);
 		}
 
 		public void SubstractGold(int amount)

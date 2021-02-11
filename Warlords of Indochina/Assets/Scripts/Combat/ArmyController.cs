@@ -9,6 +9,7 @@ using TimeControl;
 using UnityEngine;
 using UnityEngine.UI;
 using Utils;
+using Random = UnityEngine.Random;
 
 namespace Combat
 {
@@ -25,6 +26,7 @@ namespace Combat
         public float maximumMorale;
         public float currentMorale;
         public int strength;
+        public bool retreating;
 
         private void Awake()
         {
@@ -37,6 +39,7 @@ namespace Combat
             coll = GetComponent<Collider>();
             maximumMorale = Constants.MaximumMorale;
             currentMorale = maximumMorale;
+            retreating = false;
         }
 
         private void Start()
@@ -71,19 +74,21 @@ namespace Combat
             PlayerController.Instance.Army = gameObject;
         }
 
-        public IEnumerator Move(GameObject destination)
+        public IEnumerator Move(GameObject destination, int step)
         {
+            Debug.Log(nationId + " moving");
             //|| !destination.GetComponent<ProvinceController>().ProvinceData.NationId.Equals(PlayerController.Instance.NationId
-            if (!selected)
+            if (!selected && !retreating)
             {
                 yield break;
             }
 
+            retreating = false;
             var destinationPosition = destination.transform.position;
             var currentPosition = CurrentProvince.transform.position;
             var hitInfo = new RaycastHit2D();
             var departMoment = TimeController.Instance.Date;
-            var arrivalMoment = departMoment.AddDays(Constants.TravelTime);
+            var arrivalMoment = departMoment.AddDays(step);
 
             while (currentPosition != destinationPosition)
             {
@@ -93,15 +98,16 @@ namespace Combat
                 }
 
                 departMoment = TimeController.Instance.Date;
-                arrivalMoment = departMoment.AddDays(Constants.TravelTime);
+                arrivalMoment = departMoment.AddDays(step);
 
                 coll.enabled = false;
                 CurrentProvince.GetComponent<PolygonCollider2D>().enabled = false;
                 hitInfo = Physics2D.Linecast(currentPosition, destinationPosition);
+                var hitPosition = hitInfo.transform.position;
                 CurrentProvince.GetComponent<PolygonCollider2D>().enabled = true;
                 coll.enabled = true;
                 
-                currentPosition = hitInfo.transform.position;
+                currentPosition = hitPosition;
                 CurrentProvince = GameObject.FindGameObjectsWithTag("Province")
                     .Single(p => p.transform.position.Equals(currentPosition));
                 
@@ -125,6 +131,22 @@ namespace Combat
         public void SetStrength()
         {
             strength = troops / Constants.RegimentTroops;
+        }
+
+        public void Retreat()
+        {
+            var provinceName = CurrentProvince.name;
+            var controller = GameObject.FindGameObjectsWithTag("Nation")
+                .Single(n => n.GetComponent<NationController>().NationId.Equals(nationId))
+                .GetComponent<NationController>();
+
+            while (provinceName.Equals(CurrentProvince.name))
+            {
+                provinceName = controller.ResourceManagement.Provinces[Random.Range(0, controller.ResourceManagement.Provinces.Count)].Name;
+            }
+
+            retreating = true;
+            StartCoroutine(Move(GameObject.Find(provinceName), Constants.RetreatTravelTime));
         }
     }
 }

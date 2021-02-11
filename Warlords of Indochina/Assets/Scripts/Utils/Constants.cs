@@ -19,7 +19,11 @@
 		public const int ArmyOffset = 1;
 		public const int RegimentTroops = 1000;
 		public const int TravelTime = 15;
+		public const int RetreatTravelTime = 5;
 		public const float MaximumMorale = 2.5f;
-		public const int BaseDefenderAdvantage = 5;
+		public const int BaseDefenderAdvantage = 2;
+		public const int MoraleLossDivisor = 200;
+		public const float MaxMoraleLossDivisor = 2.7f;
+		public const float DailyMoraleLoss = 0.3f;
 	}
 }

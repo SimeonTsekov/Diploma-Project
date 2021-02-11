@@ -36,7 +36,7 @@ public class GameStateController : MonoBehaviour
     {
         var player = PlayerController.Instance;
         player.ResourceManagement.SetProvinces(
-            SetProvinces(PlayerController.Instance.NationId));
+            GetProvinces(PlayerController.Instance.NationId));
 
         player.NationData = NationDatas.Single(n => n.NationId.Equals(player.NationId));
         NationDatas.RemoveAll(n => n.NationId.Equals(player.NationId));
@@ -44,7 +44,7 @@ public class GameStateController : MonoBehaviour
         player.CreateArmy();
     }
 
-    private List<GameObject> SetProvinces(string NationId)
+    private List<GameObject> GetProvinces(string NationId)
     {
         return GameObject.FindGameObjectsWithTag("Province")
                 .Where(p => p.GetComponent<ProvinceController>().ProvinceData.NationId.Equals(NationId))
@@ -61,13 +61,14 @@ public class GameStateController : MonoBehaviour
         foreach (var nation in NationDatas)
         {
             var newNation = new GameObject();
-            var NationData = newNation.AddComponent<AIController>();
-            NationData.SetNationData(nation);
+            var nationDataComponent = newNation.AddComponent<AIController>();
+            nationDataComponent.SetNationData(nation);
             newNation.name = nation.Name + "AI";
             newNation.tag = "Nation";
-            NationData.SetCapital();
-            NationData.CreateArmy();
-            NationData.SetNationId(nation.NationId);
+            nationDataComponent.ResourceManagement.SetProvinces(GetProvinces(nationDataComponent.NationData.NationId));
+            nationDataComponent.SetCapital();
+            nationDataComponent.CreateArmy();
+            nationDataComponent.SetNationId(nation.NationId);
         }
     }
 
@@ -94,8 +95,7 @@ public class GameStateController : MonoBehaviour
         
         Debug.Log("FIGHT!!! " + defenderController.nationId + " " + attackerController.nationId);
 
-        while (!Mathf.Approximately(defenderController.currentMorale, 0f) ||
-               !Mathf.Approximately(attackerController.currentMorale, 0f))
+        while (defenderController.currentMorale > 0 && attackerController.currentMorale > 0)
         {
             while (!TimeController.Instance.Date.Equals(day.AddDays(1)))
             {
@@ -107,9 +107,9 @@ public class GameStateController : MonoBehaviour
             var diceRollDefender = Mathf.Max(Random.Range(0, 9) + defenderController.strength - attackerController.strength + currentDefenderAdvantage + Constants.BaseDefenderAdvantage, 0);
             var diceRollAttacker = Mathf.Max(Random.Range(0, 9) + attackerController.strength - defenderController.strength - currentDefenderAdvantage, 0);
 
-            Debug.Log(diceRollAttacker + " " + diceRollDefender);
+            Debug.Log(attackerController.currentMorale + " " + defenderController.currentMorale);
             
-            Debug.Log("Attacker cas: " + CalculateLosses(attackerController, diceRollDefender, length));
+            CalculateLosses(attackerController, diceRollDefender, length);
 
             if (attackerController.troops <= 0)
             {
@@ -117,11 +117,21 @@ public class GameStateController : MonoBehaviour
                 break;
             }
 
-            Debug.Log("Defender cas " + CalculateLosses(defenderController, diceRollAttacker, length));
+            if (attackerController.currentMorale <= 0)
+            {
+                break;
+            }
+
+            CalculateLosses(defenderController, diceRollAttacker, length);
             
             if (defenderController.troops <= 0)
             {
                 Destroy(defender);
+                break;
+            }
+            
+            if (defenderController.currentMorale <= 0)
+            {
                 break;
             }
             
@@ -138,7 +148,20 @@ public class GameStateController : MonoBehaviour
 
         armyController.troops -= casualties * 10;
         armyController.SetStrength();
-        
+        armyController.currentMorale -= CalculateMoraleLosses(armyController, casualties);
+
+        if (armyController.currentMorale <= 0)
+        {
+            armyController.currentMorale = 0f;
+            Debug.Log(armyController.nationId + " lost");
+            armyController.Retreat();
+        }
+            
         return casualties;
+    }
+
+    private float CalculateMoraleLosses(ArmyController armyController, float casualties)
+    {
+        return casualties/Constants.MoraleLossDivisor * (armyController.maximumMorale/Constants.MaxMoraleLossDivisor) + Constants.DailyMoraleLoss;
     }
 }
