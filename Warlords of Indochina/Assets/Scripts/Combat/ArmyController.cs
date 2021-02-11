@@ -148,5 +148,22 @@ namespace Combat
             retreating = true;
             StartCoroutine(Move(GameObject.Find(provinceName), Constants.RetreatTravelTime));
         }
+
+        public void ResetMorale()
+        {
+            currentMorale = maximumMorale * Constants.VictoryMoraleRecovery;
+        }
+
+        public void RestoreMonthlyMorale()
+        {
+            if (fighting || retreating) return;
+            
+            currentMorale += maximumMorale * Constants.BaseMonthlyMoraleRecovery;
+            
+            if (CurrentProvince.GetComponent<ProvinceController>().ProvinceData.NationId.Equals(nationId))
+            {
+                currentMorale += maximumMorale * Constants.BaseMonthlyMoraleRecoveryOnFriendlyTerritory;
+            }
+        }
     }
 }

@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Globalization;
+using System.Linq;
+using Combat;
+using Nations;
 using Player;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -35,9 +38,30 @@ namespace TimeControl
             {
                 _timer = 0f;
                 Date = Date.AddDays(1);
+                    
                 if (Date.Day == 1)
                 {
-                    PlayerController.Instance.ResourceManagement.UpdateResources();
+                    var armies = GameObject.FindGameObjectsWithTag("Army")
+                        .ToList();
+                    
+                    Debug.Log(armies.Count);
+
+                    foreach (var army in armies)
+                    {
+                        army.GetComponent<ArmyController>().RestoreMonthlyMorale();
+                    }
+
+                    var nations = GameObject.FindGameObjectsWithTag("Nation")
+                        .ToList();
+
+                    foreach (var nation in nations)
+                    {
+                        var nationController = nation.GetComponent<NationController>();
+                        nationController.ResourceManagement.UpdateResources();
+                        nationController.RefillArmy();
+                    }
+                    
+                    //PlayerController.Instance.ResourceManagement.UpdateResources();
                 }
             }
         }

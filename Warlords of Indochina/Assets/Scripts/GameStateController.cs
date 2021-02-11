@@ -113,12 +113,19 @@ public class GameStateController : MonoBehaviour
 
             if (attackerController.troops <= 0)
             {
+                defenderController.ResetMorale();
                 Destroy(attacker);
                 break;
             }
 
             if (attackerController.currentMorale <= 0)
             {
+                if (defenderController.troops / 2 > attackerController.troops)
+                {
+                    Destroy(attacker);
+                }
+                
+                defenderController.ResetMorale();
                 break;
             }
 
@@ -126,17 +133,26 @@ public class GameStateController : MonoBehaviour
             
             if (defenderController.troops <= 0)
             {
+                attackerController.ResetMorale();
                 Destroy(defender);
                 break;
             }
             
             if (defenderController.currentMorale <= 0)
             {
+                if (attackerController.troops / 2 > defenderController.troops)
+                {
+                    Destroy(defender);
+                }
+                attackerController.ResetMorale();
                 break;
             }
             
             length++;
         }
+        
+        defenderController.SetFighting(false);
+        attackerController.SetFighting(false);
         
         yield return null;
     }

@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Economy.Buildings;
 using GlobalDatas;
 using Player;
@@ -39,8 +40,12 @@ namespace UI.ProvinceMenu
             _isHidden = true;
             _buildingSlotsPanelActive = false;
             _buildingsPanelActive = false;
-            buildingsPanel.SetActive(_buildingsPanelActive);
-            buildingSlotsPanel.SetActive(_buildingSlotsPanelActive);
+            try
+            {
+                buildingsPanel.SetActive(_buildingsPanelActive);
+                buildingSlotsPanel.SetActive(_buildingSlotsPanelActive);
+            }
+            catch (Exception) {}
         }
 
         public void UpdateProvinceData(ProvinceData provinceData)

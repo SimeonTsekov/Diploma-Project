@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Combat;
 using Economy;
 using GlobalDatas;
@@ -38,6 +39,22 @@ namespace Nations
 		{
 			Capital = GameObject.FindGameObjectsWithTag("Province")
 				.Single(p => p.GetComponent<ProvinceController>().ProvinceData.Name.Equals(NationData.Capital));
+		}
+
+		public void RefillArmy()
+		{
+			var armyController = Army.GetComponent<ArmyController>();
+			var reinforcements = armyController.Regiments * Constants.MonthlyReinforcements;
+
+			if (armyController.troops <= armyController.Regiments * Constants.RegimentTroops - reinforcements)
+			{
+				ResourceManagement.Manpower -= reinforcements;
+				armyController.troops += reinforcements;
+			} else if (armyController.troops < armyController.Regiments * Constants.RegimentTroops)
+			{
+				armyController.troops = armyController.Regiments * Constants.RegimentTroops;
+				ResourceManagement.Manpower -= reinforcements;
+			}
 		}
 	}
 }

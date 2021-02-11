@@ -25,5 +25,9 @@
 		public const int MoraleLossDivisor = 200;
 		public const float MaxMoraleLossDivisor = 2.7f;
 		public const float DailyMoraleLoss = 0.3f;
+		public const float VictoryMoraleRecovery = 0.5f;
+		public const float BaseMonthlyMoraleRecovery = 0.15f;
+		public const float BaseMonthlyMoraleRecoveryOnFriendlyTerritory = 0.05f;
+		public const int MonthlyReinforcements = 100;
 	}
 }

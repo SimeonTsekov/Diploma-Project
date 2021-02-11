@@ -12,7 +12,7 @@ namespace Economy
 	{
 		public List<ProvinceData> Provinces { get; private set; }
 		public float Gold { get; private set; }
-		public int Manpower { get; private set; }
+		public int Manpower { get; internal set; }
 		private int MaximumManpower { get; set; }
 
 		private void Awake()
