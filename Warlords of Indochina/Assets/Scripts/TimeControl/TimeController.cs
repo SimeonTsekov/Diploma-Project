@@ -43,8 +43,6 @@ namespace TimeControl
                 {
                     var armies = GameObject.FindGameObjectsWithTag("Army")
                         .ToList();
-                    
-                    Debug.Log(armies.Count);
 
                     foreach (var army in armies)
                     {

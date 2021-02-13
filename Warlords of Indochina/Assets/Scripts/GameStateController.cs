@@ -63,7 +63,7 @@ public class GameStateController : MonoBehaviour
             var newNation = new GameObject();
             var nationDataComponent = newNation.AddComponent<AIController>();
             nationDataComponent.SetNationData(nation);
-            newNation.name = nation.Name + "AI";
+            newNation.name = nation.NationId + "AI";
             newNation.tag = "Nation";
             nationDataComponent.ResourceManagement.SetProvinces(GetProvinces(nationDataComponent.NationData.NationId));
             nationDataComponent.SetCapital();
@@ -107,8 +107,6 @@ public class GameStateController : MonoBehaviour
             var diceRollDefender = Mathf.Max(Random.Range(0, 9) + defenderController.strength - attackerController.strength + currentDefenderAdvantage + Constants.BaseDefenderAdvantage, 0);
             var diceRollAttacker = Mathf.Max(Random.Range(0, 9) + attackerController.strength - defenderController.strength - currentDefenderAdvantage, 0);
 
-            Debug.Log(attackerController.currentMorale + " " + defenderController.currentMorale);
-            
             CalculateLosses(attackerController, diceRollDefender, length);
 
             if (attackerController.troops <= 0)
@@ -179,5 +177,40 @@ public class GameStateController : MonoBehaviour
     private float CalculateMoraleLosses(ArmyController armyController, float casualties)
     {
         return casualties/Constants.MoraleLossDivisor * (armyController.maximumMorale/Constants.MaxMoraleLossDivisor) + Constants.DailyMoraleLoss;
+    }
+
+    public IEnumerator Siege(ArmyController army, ProvinceController province)
+    {
+        army.besieging = true;
+        var siegeProgress = 0;
+        var day = TimeController.Instance.Date;
+        
+        Debug.Log(army.nationId + " started besieging " + province.ProvinceData.Name);
+
+        while (siegeProgress != Constants.ProvinceSiegeDuration)
+        {
+            Debug.Log(army.besieging);
+            if (!army.besieging)
+            {
+                yield break;
+            }
+            
+            while (!TimeController.Instance.Date.Equals(day.AddDays(1)))
+            {
+                yield return null;
+            }
+
+            day = TimeController.Instance.Date;
+            
+            if (!army.fighting)
+            {
+                siegeProgress++;
+            }
+        }
+        
+        province.TransferProvince(army.nationId);
+
+        army.besieging = false;
+        yield return null;
     }
 }

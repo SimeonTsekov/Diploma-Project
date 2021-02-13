@@ -19,7 +19,7 @@
 		public const int ArmyOffset = 1;
 		public const int RegimentTroops = 1000;
 		public const int TravelTime = 15;
-		public const int RetreatTravelTime = 5;
+		public const int RetreatTravelTime = 10;
 		public const float MaximumMorale = 2.5f;
 		public const int BaseDefenderAdvantage = 2;
 		public const int MoraleLossDivisor = 200;
@@ -29,5 +29,6 @@
 		public const float BaseMonthlyMoraleRecovery = 0.15f;
 		public const float BaseMonthlyMoraleRecoveryOnFriendlyTerritory = 0.05f;
 		public const int MonthlyReinforcements = 100;
+		public const int ProvinceSiegeDuration = 30;
 	}
 }

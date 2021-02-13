@@ -43,17 +43,28 @@ namespace Nations
 
 		public void RefillArmy()
 		{
+			if (Army.Equals(null))
+			{
+				return;
+			}
+			
 			var armyController = Army.GetComponent<ArmyController>();
 			var reinforcements = armyController.Regiments * Constants.MonthlyReinforcements;
 
-			if (armyController.troops <= armyController.Regiments * Constants.RegimentTroops - reinforcements)
+			if (ResourceManagement.Manpower < reinforcements)
 			{
-				ResourceManagement.Manpower -= reinforcements;
-				armyController.troops += reinforcements;
-			} else if (armyController.troops < armyController.Regiments * Constants.RegimentTroops)
+				return;
+			}
+			
+			if (armyController.troops < armyController.Regiments * Constants.RegimentTroops)
 			{
 				armyController.troops = armyController.Regiments * Constants.RegimentTroops;
 				ResourceManagement.Manpower -= reinforcements;
+			}
+
+			if (armyController.troops > armyController.Regiments * Constants.RegimentTroops)
+			{
+				armyController.troops = armyController.Regiments * Constants.RegimentTroops;
 			}
 		}
 	}

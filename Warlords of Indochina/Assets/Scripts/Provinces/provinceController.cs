@@ -111,5 +111,28 @@ namespace Provinces
             nation.ResourceManagement.SubstractGold(building.Cost);
             return true;
         }
+
+        public void TransferProvince(String nationId)
+        {
+            var newOwnerName = nationId.Equals(PlayerController.Instance.NationId) ? "PlayerController" 
+                : nationId + "AI";
+            
+            
+            var newOwner = GameObject.Find(newOwnerName)
+                .GetComponent<NationController>();
+            
+            GameObject.Find(ProvinceData.NationId + "AI")
+                .GetComponent<NationController>()
+                .ResourceManagement.Provinces.Remove(ProvinceData);
+
+            ProvinceData.NationId = nationId;
+            ProvinceData.Color = newOwner.NationData.Color;    
+            ColorUtility.TryParseHtmlString(ProvinceData.Color, out _color);
+            _sprite.color = new Color(_color.r, _color.g, _color.b, 0.5f);
+            
+            newOwner.ResourceManagement.Provinces.Add(ProvinceData);
+            
+            Debug.Log("Province " + ProvinceData.Name + " besieged by " + nationId);
+        }
     }
 }

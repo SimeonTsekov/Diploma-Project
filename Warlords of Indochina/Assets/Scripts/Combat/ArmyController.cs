@@ -27,6 +27,7 @@ namespace Combat
         public float currentMorale;
         public int strength;
         public bool retreating;
+        public bool besieging;
 
         private void Awake()
         {
@@ -40,6 +41,7 @@ namespace Combat
             maximumMorale = Constants.MaximumMorale;
             currentMorale = maximumMorale;
             retreating = false;
+            besieging = false;
         }
 
         private void Start()
@@ -76,6 +78,7 @@ namespace Combat
 
         public IEnumerator Move(GameObject destination, int step)
         {
+            besieging = false;
             Debug.Log(nationId + " moving");
             //|| !destination.GetComponent<ProvinceController>().ProvinceData.NationId.Equals(PlayerController.Instance.NationId
             if (!selected && !retreating)
@@ -85,6 +88,7 @@ namespace Combat
 
             retreating = false;
             var destinationPosition = destination.transform.position;
+            var destinationController = destination.GetComponent<ProvinceController>();
             var currentPosition = CurrentProvince.transform.position;
             var hitInfo = new RaycastHit2D();
             var departMoment = TimeController.Instance.Date;
@@ -113,6 +117,11 @@ namespace Combat
                 
                 gameObject.transform.position = new Vector3(currentPosition.x, currentPosition.y, currentPosition.z-Constants.ArmyOffset);
             }
+
+            if (!destinationController.ProvinceData.NationId.Equals(nationId))
+            {
+                StartCoroutine(GameStateController.Instance.Siege(this, destinationController));
+            }
         }
 
         private void OnCollisionEnter(Collision other)
@@ -140,6 +149,12 @@ namespace Combat
                 .Single(n => n.GetComponent<NationController>().NationId.Equals(nationId))
                 .GetComponent<NationController>();
 
+            if (controller.ResourceManagement.Provinces.Count == 1)
+            {
+                Destroy(gameObject);
+                return;
+            }
+            
             while (provinceName.Equals(CurrentProvince.name))
             {
                 provinceName = controller.ResourceManagement.Provinces[Random.Range(0, controller.ResourceManagement.Provinces.Count)].Name;
