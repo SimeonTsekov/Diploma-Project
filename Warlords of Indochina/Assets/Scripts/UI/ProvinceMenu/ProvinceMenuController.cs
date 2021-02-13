@@ -89,7 +89,7 @@ namespace UI.ProvinceMenu
         }
         
         public void Show()
-        {
+        { 
             if (!_isHidden) return;
             _isHidden = false;
             menuTransform.anchorMax = Vector2.zero;

@@ -30,5 +30,9 @@
 		public const float BaseMonthlyMoraleRecoveryOnFriendlyTerritory = 0.05f;
 		public const int MonthlyReinforcements = 100;
 		public const int ProvinceSiegeDuration = 30;
+		public const int RegimentBuildTime = 60;
+		public const float RegimentCost = 10.00f;
+		public const float RegimentMonthlyCostConstant = 0.02f;
+		public const float BattleReward = 25f;
 	}
 }

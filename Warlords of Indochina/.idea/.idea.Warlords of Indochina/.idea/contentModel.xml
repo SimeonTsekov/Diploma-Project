@@ -46,6 +46,14 @@
             <e p="TimeController.cs" t="Include" />
           </e>
           <e p="UI" t="Include">
+            <e p="ArmyInfo" t="Include">
+              <e p="ArmyMenuController.cs" t="Include" />
+              <e p="ArmyMoraleLabelController.cs" t="Include" />
+              <e p="ArmyNationIdLabelController.cs" t="Include" />
+              <e p="ArmyRegimentsLabelController.cs" t="Include" />
+              <e p="ArmyStrengthLabelController.cs" t="Include" />
+              <e p="ArmyTroopsLabelController.cs" t="Include" />
+            </e>
             <e p="NationPicker" t="Include">
               <e p="NationSelectorController.cs" t="Include" />
               <e p="StartButtonController.cs" t="Include" />

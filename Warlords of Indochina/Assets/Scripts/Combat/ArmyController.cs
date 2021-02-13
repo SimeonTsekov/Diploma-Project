@@ -6,6 +6,7 @@ using Nations;
 using Player;
 using Provinces;
 using TimeControl;
+using UI.ArmyInfo;
 using UnityEngine;
 using UnityEngine.UI;
 using Utils;
@@ -17,7 +18,7 @@ namespace Combat
     {
         public string nationId;
         public int troops;
-        public int Regiments { get; private set; }
+        public int Regiments { get; internal set; }
         public bool selected;
         public bool stopped;
         public GameObject CurrentProvince { get; private set; }
@@ -74,6 +75,8 @@ namespace Combat
             
             selected = true;
             PlayerController.Instance.Army = gameObject;
+            ArmyMenuController.Instance.Show();
+            ArmyMenuController.Instance.SetArmyInformation(this);
         }
 
         public IEnumerator Move(GameObject destination, int step)
@@ -171,14 +174,24 @@ namespace Combat
 
         public void RestoreMonthlyMorale()
         {
-            if (fighting || retreating) return;
+            if (fighting || retreating || Math.Abs(currentMorale - maximumMorale) < 0.00001) return;
             
             currentMorale += maximumMorale * Constants.BaseMonthlyMoraleRecovery;
             
             if (CurrentProvince.GetComponent<ProvinceController>().ProvinceData.NationId.Equals(nationId))
             {
                 currentMorale += maximumMorale * Constants.BaseMonthlyMoraleRecoveryOnFriendlyTerritory;
+
+                if (currentMorale > maximumMorale)
+                {
+                    currentMorale = maximumMorale;
+                }
             }
+        }
+
+        public void RestoreStrength()
+        {
+            strength = troops / Constants.RegimentTroops;
         }
     }
 }

@@ -20,10 +20,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e07e5c7b-9222-4973-a516-0b6c39e0665b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ArmyInfo.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ArmyInfo/ArmyMenuController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ArmyInfo/ArmyMenuController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ArmyInfo/ArmyMoraleLabelController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ArmyInfo/ArmyMoraleLabelController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ArmyInfo/ArmyNationIdLabelController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ArmyInfo/ArmyNationIdLabelController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ArmyInfo/ArmyRegimentsLabelController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ArmyInfo/ArmyRegimentsLabelController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ArmyInfo/ArmyStrengthLabelController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ArmyInfo/ArmyStrengthLabelController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ArmyInfo/ArmyTroopsLabelController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ArmyInfo/ArmyTroopsLabelController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Warlords of Indochina/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Warlords of Indochina/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Warlords of Indochina/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Warlords of Indochina/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainGameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainGameScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/ArmyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/ArmyController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/ResourceManagement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/ResourceManagement.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameStateController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameStateController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Nations/NationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Nations/NationController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Provinces/provinceController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Provinces/provinceController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ProvinceMenu/ProvinceMenuController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ProvinceMenu/ProvinceMenuController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/Constants.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/Constants.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,12 +64,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/TimeControll/TimeController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Time/TimeSliderController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Time/PauseButtonController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Nations/NationProvinceController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Utils/NatioIdParser.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/StartButtonController.cs" />
         <option value="$PROJECT_DIR$/Assets/GameStateController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/NationPicker/StartButtonController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/NationPicker/NationSelectorController.cs" />
@@ -89,14 +101,20 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Provinces/ProvinceManagement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Combat/MoraleBarController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Combat/TroopsCountController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/ProvinceMenu/ProvinceMenuController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Economy/ResourceManagement.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/TimeControl/TimeController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Provinces/ProvinceController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Combat/ArmyController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Constants.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameStateController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/ProvinceMenu/ProvinceMenuController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/ArmyInfo/ArmyNationIdLabelController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/ArmyInfo/ArmyRegimentsLabelController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/ArmyInfo/ArmyTroopsLabelController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/ArmyInfo/ArmyStrengthLabelController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/ArmyInfo/ArmyMoraleLabelController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/TimeControl/TimeController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Nations/NationController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Combat/ArmyController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/ArmyInfo/ArmyMenuController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameStateController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Economy/ResourceManagement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Constants.cs" />
       </list>
     </option>
   </component>
@@ -168,7 +186,7 @@
       <workItem from="1612940177500" duration="3634000" />
       <workItem from="1612966735930" duration="11008000" />
       <workItem from="1613055222374" duration="12054000" />
-      <workItem from="1613209961414" duration="5250000" />
+      <workItem from="1613209961414" duration="14434000" />
     </task>
     <servers />
   </component>

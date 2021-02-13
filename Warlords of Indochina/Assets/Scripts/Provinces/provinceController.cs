@@ -76,15 +76,14 @@ namespace Provinces
                 {
                     case "MainGameScene":
                         ProvinceMenuController.Instance.UpdateProvinceData(this.ProvinceData);
-                        ProvinceMenuController.Instance.Show();
                         break;
                     case "NationSelectionScene":
                         PlayerController.Instance.SetNationId(ProvinceData.NationId);
                         break;
                 }
+                
+                ProvinceMenuController.Instance.Show();
             }
-
-            ProvinceMenuController.Instance.Show();
         }
 
         public void OnProvincesFetched(List<ProvinceData> provinceDatas)

@@ -184,8 +184,6 @@ public class GameStateController : MonoBehaviour
         army.besieging = true;
         var siegeProgress = 0;
         var day = TimeController.Instance.Date;
-        
-        Debug.Log(army.nationId + " started besieging " + province.ProvinceData.Name);
 
         while (siegeProgress != Constants.ProvinceSiegeDuration)
         {
@@ -212,5 +210,28 @@ public class GameStateController : MonoBehaviour
 
         army.besieging = false;
         yield return null;
+    }
+
+    public IEnumerator BuildRegiment(ArmyController army, NationController nation)
+    {
+        var day = TimeController.Instance.Date;
+
+        if (nation.ResourceManagement.Manpower < Constants.RegimentTroops
+            || nation.ResourceManagement.Gold < Constants.RegimentCost)
+        {
+            yield break;
+        }
+        
+        nation.ResourceManagement.Manpower -= Constants.RegimentTroops;
+        nation.ResourceManagement.Gold -= Constants.RegimentCost;
+        
+        while (!TimeController.Instance.Date.Equals(day.AddDays(Constants.RegimentBuildTime)))
+        {
+            yield return null;
+        }
+
+        army.Regiments++;
+        army.troops += Constants.RegimentTroops;
+        army.RestoreStrength();
     }
 }

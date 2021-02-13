@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Combat;
 using GlobalDatas;
+using Nations;
 using Provinces;
 using UnityEngine;
 using Utils;
@@ -11,7 +13,7 @@ namespace Economy
 	public class ResourceManagement : MonoBehaviour
 	{
 		public List<ProvinceData> Provinces { get; private set; }
-		public float Gold { get; private set; }
+		public float Gold { get; internal set; }
 		public int Manpower { get; internal set; }
 		private int MaximumManpower { get; set; }
 
@@ -55,7 +57,12 @@ namespace Economy
 
 		public float GetMonthlyGold()
 		{
-			return Provinces.Sum(province => province.Gold);
+			var army = gameObject.GetComponentInParent<NationController>()
+				.Army.GetComponent<ArmyController>();
+
+			var armyCost = Constants.RegimentMonthlyCostConstant * army.strength * Constants.RegimentCost;
+			
+			return Provinces.Sum(province => province.Gold) - armyCost;
 		}
 
 		public void SubstractGold(int amount)

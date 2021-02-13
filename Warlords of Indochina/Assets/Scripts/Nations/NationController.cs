@@ -66,6 +66,8 @@ namespace Nations
 			{
 				armyController.troops = armyController.Regiments * Constants.RegimentTroops;
 			}
+			
+			armyController.RestoreStrength();
 		}
 	}
 }
