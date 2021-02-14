@@ -4,9 +4,7 @@ using Economy.Buildings;
 using GlobalDatas;
 using Player;
 using Provinces;
-using UnityEditor.UIElements;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Utils;
 
