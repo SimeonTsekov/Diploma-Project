@@ -24,6 +24,7 @@ namespace Player
             ResourceManagement = gameObject.AddComponent<ResourceManagement>();
             CombatController = gameObject.AddComponent<CombatController>();
             NationId = "";
+            atWar = new List<string>();
         }
 
 

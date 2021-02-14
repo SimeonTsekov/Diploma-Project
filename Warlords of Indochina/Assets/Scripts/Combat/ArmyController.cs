@@ -82,9 +82,12 @@ namespace Combat
         public IEnumerator Move(GameObject destination, int step)
         {
             besieging = false;
-            Debug.Log(nationId + " moving");
-            //|| !destination.GetComponent<ProvinceController>().ProvinceData.NationId.Equals(PlayerController.Instance.NationId
-            if (!selected && !retreating)
+            var owner = GameObject.FindGameObjectsWithTag("Nation")
+                .Single(n => n.GetComponent<NationController>().NationData.NationId.Equals(nationId))
+                .GetComponent<NationController>();
+
+            if (!selected && !retreating
+                          || !owner.atWar.Contains(destination.GetComponent<ProvinceController>().ProvinceData.NationId))
             {
                 yield break;
             }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Combat;
 using Economy;
@@ -18,6 +19,7 @@ namespace Nations
 		public GameObject armyPrefab;
 		public GameObject Army { get; set; }
 		public GameObject Capital { get; private set; }
+		public List<string> atWar;
 
 		public void CreateArmy()
 		{
@@ -68,6 +70,12 @@ namespace Nations
 			}
 			
 			armyController.RestoreStrength();
+		}
+
+		public void DeclareWar(string nationId)
+		{
+			Debug.Log(NationData.NationId + " declare war on " + nationId);
+			atWar.Add(nationId);
 		}
 	}
 }

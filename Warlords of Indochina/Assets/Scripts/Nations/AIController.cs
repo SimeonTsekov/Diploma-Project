@@ -1,4 +1,5 @@
-﻿using Combat;
+﻿using System.Collections.Generic;
+using Combat;
 using Economy;
 using GlobalDatas;
 
@@ -18,6 +19,7 @@ namespace Nations
 			ResourceManagement = gameObject.AddComponent<ResourceManagement>();
 			CombatController = gameObject.AddComponent<CombatController>();
 			NationId = "";
+			atWar = new List<string>();
 		}
 
 		public void SetNationData(NationData nationData)

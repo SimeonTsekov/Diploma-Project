@@ -25,6 +25,7 @@ namespace UI.ProvinceMenu
         public GameObject buildingSlotsPanel;
         public GameObject buildingsPanel;
         public GameObject buildingsButton;
+        public GameObject warButton;
 
         private void Awake()
         {
@@ -55,6 +56,7 @@ namespace UI.ProvinceMenu
                 .Single(p => p.GetComponent<ProvinceController>().ProvinceData.Name.Equals(ProvinceData.Name))
                 .GetComponent<ProvinceController>();
             UpdateBuildingsButtonState();
+            UpdateDeclareWarButtonState();
             if (buildingSlotsPanel.activeSelf)
             {
                 UpdateProvinceSlots();
@@ -85,6 +87,12 @@ namespace UI.ProvinceMenu
         private void UpdateBuildingsButtonState()
         {
             buildingsButton.SetActive(province.ProvinceData.NationId.Equals(
+                PlayerController.Instance.NationId));
+        }
+        
+        private void UpdateDeclareWarButtonState()
+        {
+            warButton.SetActive(!province.ProvinceData.NationId.Equals(
                 PlayerController.Instance.NationId));
         }
         
@@ -136,6 +144,11 @@ namespace UI.ProvinceMenu
             }
             
             UpdateProvinceSlots();
+        }
+
+        public void DeclareWar()
+        {
+            PlayerController.Instance.DeclareWar(ProvinceData.NationId);
         }
     }
 }
