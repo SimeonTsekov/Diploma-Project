@@ -42,6 +42,10 @@
             <e p="ProvinceController.cs" t="Include" />
             <e p="ProvinceManagement.cs" t="Include" />
           </e>
+          <e p="Saves" t="Include">
+            <e p="SaveData.cs" t="Include" />
+            <e p="SaveSystem.cs" t="Include" />
+          </e>
           <e p="TimeControl" t="Include">
             <e p="TimeController.cs" t="Include" />
           </e>
@@ -76,6 +80,7 @@
               <e p="ProvinceTerrainLabelController.cs" t="Include" />
               <e p="SlotButtonController.cs" t="Include" />
             </e>
+            <e p="SettingsMenuController.cs" t="Include" />
             <e p="Time" t="Include">
               <e p="PauseButtonController.cs" t="Include" />
               <e p="TimeLabelController.cs" t="Include" />

@@ -8,5 +8,6 @@ namespace UI
         {
             DontDestroyOnLoad(gameObject);
         }
+        
     }
 }
