@@ -29,6 +29,8 @@ namespace Combat
         public int strength;
         public bool retreating;
         public bool besieging;
+        public bool moving;
+        public Coroutine movement;
 
         private void Awake()
         {
@@ -43,6 +45,7 @@ namespace Combat
             currentMorale = maximumMorale;
             retreating = false;
             besieging = false;
+            moving = false;
         }
 
         private void Start()
@@ -81,14 +84,18 @@ namespace Combat
 
         public IEnumerator Move(GameObject destination, int step)
         {
+            moving = true;
             besieging = false;
+
             var owner = GameObject.FindGameObjectsWithTag("Nation")
                 .Single(n => n.GetComponent<NationController>().NationData.NationId.Equals(nationId))
                 .GetComponent<NationController>();
 
             if (!selected && !retreating
-                          || !owner.atWar.Contains(destination.GetComponent<ProvinceController>().ProvinceData.NationId))
+                          || (!owner.atWar.Contains(destination.GetComponent<ProvinceController>().ProvinceData.NationId))
+                          && !owner.NationData.NationId.Equals(nationId))
             {
+                moving = false;
                 yield break;
             }
 
@@ -106,7 +113,7 @@ namespace Combat
                 {
                     yield return null;
                 }
-
+                
                 departMoment = TimeController.Instance.Date;
                 arrivalMoment = departMoment.AddDays(step);
 
@@ -124,6 +131,7 @@ namespace Combat
                 gameObject.transform.position = new Vector3(currentPosition.x, currentPosition.y, currentPosition.z-Constants.ArmyOffset);
             }
 
+            moving = false;
             if (!destinationController.ProvinceData.NationId.Equals(nationId))
             {
                 StartCoroutine(GameStateController.Instance.Siege(this, destinationController));

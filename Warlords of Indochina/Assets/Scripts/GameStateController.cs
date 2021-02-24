@@ -157,10 +157,10 @@ public class GameStateController : MonoBehaviour
 
     private int CalculateLosses(ArmyController armyController, int diceRoll, int length)
     {
-        var baseCasualties = 15 + 5 * diceRoll;
-        var casualties = baseCasualties + baseCasualties * (1 + length) / 100;
+        var baseCasualties = Constants.BaseCasualties + Constants.DiceAmplifier * diceRoll;
+        var casualties = baseCasualties + baseCasualties * (1 + length) / Constants.CasualtiesDivisor;
 
-        armyController.troops -= casualties * 10;
+        armyController.troops -= casualties * Constants.TroopsCasualtiesAmplifier;
         armyController.SetStrength();
         armyController.currentMorale -= CalculateMoraleLosses(armyController, casualties);
 
@@ -176,7 +176,9 @@ public class GameStateController : MonoBehaviour
 
     private float CalculateMoraleLosses(ArmyController armyController, float casualties)
     {
-        return casualties/Constants.MoraleLossDivisor * (armyController.maximumMorale/Constants.MaxMoraleLossDivisor) + Constants.DailyMoraleLoss;
+        return casualties/Constants.MoraleLossDivisor 
+            * (armyController.maximumMorale/Constants.MaxMoraleLossDivisor) 
+            + Constants.DailyMoraleLoss;
     }
 
     public IEnumerator Siege(ArmyController army, ProvinceController province)
@@ -187,7 +189,6 @@ public class GameStateController : MonoBehaviour
 
         while (siegeProgress != Constants.ProvinceSiegeDuration)
         {
-            Debug.Log(army.besieging);
             if (!army.besieging)
             {
                 yield break;

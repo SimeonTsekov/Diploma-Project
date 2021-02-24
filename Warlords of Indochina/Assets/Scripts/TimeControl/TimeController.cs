@@ -58,8 +58,6 @@ namespace TimeControl
                         nationController.ResourceManagement.UpdateResources();
                         nationController.RefillArmy();
                     }
-                    
-                    //PlayerController.Instance.ResourceManagement.UpdateResources();
                 }
             }
         }

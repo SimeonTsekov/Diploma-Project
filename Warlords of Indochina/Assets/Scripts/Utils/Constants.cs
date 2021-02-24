@@ -34,5 +34,9 @@
 		public const float RegimentCost = 10.00f;
 		public const float RegimentMonthlyCostConstant = 0.02f;
 		public const float BattleReward = 25f;
+		public const int BaseCasualties = 15;
+		public const int DiceAmplifier = 5;
+		public const int CasualtiesDivisor = 100;
+		public const int TroopsCasualtiesAmplifier = 10;
 	}
 }

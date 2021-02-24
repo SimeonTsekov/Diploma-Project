@@ -47,7 +47,14 @@ namespace Provinces
         {
             if (Input.GetMouseButtonDown(1) && _hovered)
             {
-                StartCoroutine(PlayerController.Instance.Army.GetComponent<ArmyController>().Move(gameObject, Constants.TravelTime));
+                var army = PlayerController.Instance.Army.GetComponent<ArmyController>();
+                Debug.Log(army.moving);
+                if (army.moving)
+                {
+                    StopCoroutine(army.movement);
+                    army.moving = false;
+                }
+                army.movement = StartCoroutine(army.Move(gameObject, Constants.TravelTime));
             }
         }
 
@@ -111,7 +118,7 @@ namespace Provinces
             return true;
         }
 
-        public void TransferProvince(String nationId)
+        public void TransferProvince(string nationId)
         {
             var newOwnerName = nationId.Equals(PlayerController.Instance.NationId) ? "PlayerController" 
                 : nationId + "AI";
