@@ -1,11 +1,10 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Economy.Buildings;
 using GlobalDatas;
 using Player;
 using Provinces;
-using UnityEditor.UIElements;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Utils;
 
@@ -24,6 +23,7 @@ namespace UI.ProvinceMenu
         public GameObject buildingSlotsPanel;
         public GameObject buildingsPanel;
         public GameObject buildingsButton;
+        public GameObject warButton;
 
         private void Awake()
         {
@@ -39,8 +39,12 @@ namespace UI.ProvinceMenu
             _isHidden = true;
             _buildingSlotsPanelActive = false;
             _buildingsPanelActive = false;
-            buildingsPanel.SetActive(_buildingsPanelActive);
-            buildingSlotsPanel.SetActive(_buildingSlotsPanelActive);
+            try
+            {
+                buildingsPanel.SetActive(_buildingsPanelActive);
+                buildingSlotsPanel.SetActive(_buildingSlotsPanelActive);
+            }
+            catch (Exception) {}
         }
 
         public void UpdateProvinceData(ProvinceData provinceData)
@@ -50,6 +54,7 @@ namespace UI.ProvinceMenu
                 .Single(p => p.GetComponent<ProvinceController>().ProvinceData.Name.Equals(ProvinceData.Name))
                 .GetComponent<ProvinceController>();
             UpdateBuildingsButtonState();
+            UpdateDeclareWarButtonState();
             if (buildingSlotsPanel.activeSelf)
             {
                 UpdateProvinceSlots();
@@ -58,7 +63,7 @@ namespace UI.ProvinceMenu
 
         private void UpdateProvinceSlots()
         {
-            for (int i=0; i<province.BuildingManagement.Buildings.Count; i++)
+            for (var i=0; i<province.BuildingManagement.Buildings.Count; i++)
             {
                 var slot = GameObject.FindGameObjectsWithTag("BuildingSlot")
                     .Single(s => int.Parse(s.name) == i+1);
@@ -83,8 +88,14 @@ namespace UI.ProvinceMenu
                 PlayerController.Instance.NationId));
         }
         
-        public void Show()
+        private void UpdateDeclareWarButtonState()
         {
+            warButton.SetActive(!province.ProvinceData.NationId.Equals(
+                PlayerController.Instance.NationId));
+        }
+        
+        public void Show()
+        { 
             if (!_isHidden) return;
             _isHidden = false;
             menuTransform.anchorMax = Vector2.zero;
@@ -121,17 +132,21 @@ namespace UI.ProvinceMenu
             {
                 case Constants.MineButtonIdentifier :
                     province.ConstructBuilding(new Mine(), currentSlot-1);
-                    UpdateProvinceSlots();
                     break;
                 case  Constants.BarracksButtonIdentifier:
                     province.ConstructBuilding(new Barracks(), currentSlot-1);
-                    UpdateProvinceSlots();
                     break;
                 case  Constants.FortButtonIdentifier:
                     province.ConstructBuilding(new Fort(), currentSlot-1);
-                    UpdateProvinceSlots();
                     break;
             }
+            
+            UpdateProvinceSlots();
+        }
+
+        public void DeclareWar()
+        {
+            PlayerController.Instance.DeclareWar(ProvinceData.NationId);
         }
     }
 }

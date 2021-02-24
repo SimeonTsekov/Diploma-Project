@@ -11,12 +11,12 @@ namespace UI.Time
         private void Start()
         {
             _txt = GetComponent<Text>(); 
-            _txt.text = TimeController.Instance.GetDate();
+            _txt.text = TimeController.Instance.GetDateAsString();
         }
 
         private void Update()
         {
-            _txt.text = TimeController.Instance.GetDate();
+            _txt.text = TimeController.Instance.GetDateAsString();
         }
     }
 }

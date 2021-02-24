@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Globalization;
+using System.Linq;
+using Combat;
+using Nations;
 using Player;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -10,7 +13,7 @@ namespace TimeControl
     public class TimeController : MonoBehaviour
     {
         public static TimeController Instance { get; private set; }
-        private DateTime _date;
+        public DateTime Date { get; private set; }
         private float _timer;
         private float _delayAmount;
         public int speed;
@@ -21,7 +24,7 @@ namespace TimeControl
                 Instance = this;
                 DontDestroyOnLoad(gameObject);
             }
-            _date = new DateTime(1444, 11, 11);
+            Date = new DateTime(1444, 11, 11);
             _timer = 0f;
             _delayAmount = 1.0f;
             speed = Constants.MinSpeed;
@@ -34,17 +37,34 @@ namespace TimeControl
             if (_timer >= _delayAmount)
             {
                 _timer = 0f;
-                _date = _date.AddDays(1);
-                if (_date.Day == 1)
+                Date = Date.AddDays(1);
+                    
+                if (Date.Day == 1)
                 {
-                    PlayerController.Instance.ResourceManagement.UpdateResources();
+                    var armies = GameObject.FindGameObjectsWithTag("Army")
+                        .ToList();
+
+                    foreach (var army in armies)
+                    {
+                        army.GetComponent<ArmyController>().RestoreMonthlyMorale();
+                    }
+
+                    var nations = GameObject.FindGameObjectsWithTag("Nation")
+                        .ToList();
+
+                    foreach (var nation in nations)
+                    {
+                        var nationController = nation.GetComponent<NationController>();
+                        nationController.ResourceManagement.UpdateResources();
+                        nationController.RefillArmy();
+                    }
                 }
             }
         }
 
-        public string GetDate()
+        public string GetDateAsString()
         {
-            return _date.ToString("dd MMMM yyyy", new CultureInfo("en-US"));
+            return Date.ToString("dd MMMM yyyy", new CultureInfo("en-US"));
         }
 
         public void OnPause()

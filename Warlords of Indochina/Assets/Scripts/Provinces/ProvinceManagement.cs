@@ -16,7 +16,6 @@ namespace Provinces
             {
                 Instance = this;
             }
-
             await LoadProvinces();
         }
 
