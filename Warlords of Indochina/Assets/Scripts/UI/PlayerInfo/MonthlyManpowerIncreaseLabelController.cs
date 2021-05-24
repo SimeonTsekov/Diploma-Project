@@ -16,7 +16,7 @@ namespace UI.PlayerInfo
 
 		private void Update()
 		{
-			_txt.text = "Monthly: " + PlayerController.Instance.ResourceManagement.GetMonthlyManpowerRecovery();
+			_txt.text = PlayerController.Instance.ResourceManagement.GetMonthlyManpowerRecovery().ToString();
 		}
 	}
 }

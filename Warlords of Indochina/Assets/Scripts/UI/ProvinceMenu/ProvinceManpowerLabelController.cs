@@ -18,7 +18,7 @@ namespace UI.ProvinceMenu
         {
             try
             {
-                _txt.text = "Local Manpower: " + ProvinceMenuController.Instance.province.ProvinceData.Manpower;
+                _txt.text = "Local Mnp: " + ProvinceMenuController.Instance.province.ProvinceData.Manpower;
             }
             catch (Exception)
             {
