@@ -39,6 +39,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerInfo/MonthlyManpowerIncreaseLabelController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/ProvinceMenu/ProvinceManpowerLabelController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/ProvinceMenu/ProvinceTerrainLabelController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/ArmyInfo/ArmyNationIdLabelController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1mylEcgzW6SHCrVAZLI3w8ZJiTE" />
@@ -132,6 +133,7 @@
       <workItem from="1614165068915" duration="3083000" />
       <workItem from="1621867545317" duration="61000" />
       <workItem from="1621867632685" duration="2408000" />
+      <workItem from="1621933508372" duration="1364000" />
     </task>
     <servers />
   </component>
