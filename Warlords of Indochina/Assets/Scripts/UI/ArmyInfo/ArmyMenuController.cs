@@ -38,6 +38,14 @@ namespace UI.ArmyInfo
             menuTransform.anchorMax = Vector2.zero;
             menuTransform.anchorMin = Vector2.zero;
         }
+        
+        public void Hide()
+        {
+            if (_isHidden) return;
+            _isHidden = true;
+            menuTransform.anchorMax = new Vector2(5, 5);
+            menuTransform.anchorMin = new Vector2(5, 5);
+        }
 
         public void SetArmyInformation(ArmyController armyController)
         {

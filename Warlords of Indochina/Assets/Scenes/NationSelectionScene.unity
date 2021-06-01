@@ -416,6 +416,7 @@ MonoBehaviour:
   province: {fileID: 0}
   menuTransform: {fileID: 976665605}
   currentSlot: 0
+  buildingsPanelActive: 0
   buildingSlotsPanel: {fileID: 0}
   buildingsPanel: {fileID: 0}
   buildingsButton: {fileID: 0}
@@ -1590,7 +1591,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.38679248, g: 0.38679248, b: 0.38679248, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

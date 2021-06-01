@@ -53,6 +53,7 @@ namespace Provinces
                 {
                     StopCoroutine(army.movement);
                     army.moving = false;
+                    Destroy(GameObject.FindGameObjectWithTag("DestinationMarker"));
                 }
                 army.movement = StartCoroutine(army.Move(gameObject, Constants.TravelTime));
             }

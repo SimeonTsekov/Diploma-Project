@@ -107,6 +107,10 @@ namespace Combat
             var departMoment = TimeController.Instance.Date;
             var arrivalMoment = departMoment.AddDays(step);
 
+            var destinationMarkerModel = Resources.Load("DestinationMarker") as GameObject;
+            var destinationMarker = Instantiate(destinationMarkerModel, destinationPosition, Quaternion.identity);
+            destinationMarker.transform.SetParent (GameObject.FindGameObjectWithTag("Canvas").transform, true);
+            
             while (currentPosition != destinationPosition)
             {
                 while (!TimeController.Instance.Date.Equals(arrivalMoment))
@@ -131,6 +135,7 @@ namespace Combat
                 gameObject.transform.position = new Vector3(currentPosition.x, currentPosition.y, currentPosition.z-Constants.ArmyOffset);
             }
 
+            Destroy(destinationMarker);
             moving = false;
             if (!destinationController.ProvinceData.NationId.Equals(nationId))
             {

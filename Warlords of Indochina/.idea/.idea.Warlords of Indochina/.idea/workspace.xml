@@ -40,6 +40,12 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/ProvinceMenu/ProvinceManpowerLabelController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/ProvinceMenu/ProvinceTerrainLabelController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/ArmyInfo/ArmyNationIdLabelController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/ClosePanel.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/ProvinceMenu/ProvinceMenuController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/ArmyInfo/ArmyMenuController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Combat/ArmyController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Provinces/ProvinceController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1mylEcgzW6SHCrVAZLI3w8ZJiTE" />
@@ -134,6 +140,8 @@
       <workItem from="1621867545317" duration="61000" />
       <workItem from="1621867632685" duration="2408000" />
       <workItem from="1621933508372" duration="1364000" />
+      <workItem from="1622023512775" duration="104000" />
+      <workItem from="1622552429572" duration="4000000" />
     </task>
     <servers />
   </component>
