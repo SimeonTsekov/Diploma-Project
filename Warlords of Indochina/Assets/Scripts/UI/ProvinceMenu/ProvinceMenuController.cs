@@ -19,7 +19,7 @@ namespace UI.ProvinceMenu
         private bool _isHidden;
         public int currentSlot;
         private bool _buildingSlotsPanelActive;
-        private bool _buildingsPanelActive;
+        public bool buildingsPanelActive;
         public GameObject buildingSlotsPanel;
         public GameObject buildingsPanel;
         public GameObject buildingsButton;
@@ -38,10 +38,10 @@ namespace UI.ProvinceMenu
             currentSlot = 0;
             _isHidden = true;
             _buildingSlotsPanelActive = false;
-            _buildingsPanelActive = false;
+            buildingsPanelActive = false;
             try
             {
-                buildingsPanel.SetActive(_buildingsPanelActive);
+                buildingsPanel.SetActive(buildingsPanelActive);
                 buildingSlotsPanel.SetActive(_buildingSlotsPanelActive);
             }
             catch (Exception) {}
@@ -101,6 +101,14 @@ namespace UI.ProvinceMenu
             menuTransform.anchorMax = Vector2.zero;
             menuTransform.anchorMin = Vector2.zero;
         }
+        
+        public void Hide()
+        { 
+            if (_isHidden) return;
+            _isHidden = true;
+            menuTransform.anchorMax = new Vector2(-2, -2);
+            menuTransform.anchorMin = new Vector2(-2, -2);
+        }
 
         public void ShowBuildingSlots()
         {
@@ -113,15 +121,15 @@ namespace UI.ProvinceMenu
         {
             var clickedSlot = int.Parse(button.name);
 
-            if (clickedSlot != currentSlot && _buildingsPanelActive)
+            if (clickedSlot != currentSlot && buildingsPanelActive)
             {
                 currentSlot = clickedSlot;
                 return;
             }
             
             currentSlot = clickedSlot;
-            _buildingsPanelActive = !_buildingsPanelActive;
-            buildingsPanel.SetActive(_buildingsPanelActive);
+            buildingsPanelActive = !buildingsPanelActive;
+            buildingsPanel.SetActive(buildingsPanelActive);
         }
 
         public void OnBuild(Button button)

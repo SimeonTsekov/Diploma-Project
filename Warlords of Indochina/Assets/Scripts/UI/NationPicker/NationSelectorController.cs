@@ -20,7 +20,7 @@ namespace UI.NationPicker
 		{
 			try
 			{
-				_txt.text = "Nation: " + NatioIdParser.ParseId(PlayerController.Instance.NationId);
+				_txt.text = NatioIdParser.ParseId(PlayerController.Instance.NationId);
 			}
 			catch (Exception e)
 			{

@@ -18,7 +18,7 @@ namespace UI.ProvinceMenu
         {
             try
             {
-                _txt.text = "Terrain: " + ProvinceMenuController.Instance.ProvinceData.Terrain;
+                _txt.text =  ProvinceMenuController.Instance.ProvinceData.Terrain;
             }
             catch (Exception)
             {

@@ -9,6 +9,7 @@ TagManager:
   - Canvas
   - Army
   - Nation
+  - DestinationMarker
   layers:
   - Default
   - TransparentFX

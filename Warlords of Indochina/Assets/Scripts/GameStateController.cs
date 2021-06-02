@@ -235,4 +235,9 @@ public class GameStateController : MonoBehaviour
         army.troops += Constants.RegimentTroops;
         army.RestoreStrength();
     }
+
+    public void OnSave()
+    {
+        
+    }
 }
